@@ -1,0 +1,79 @@
+<div class="page-header">
+    <ol class="breadcrumb">
+        <li class="active">
+            <i class="fa fa-user"></i> 
+            <%= t('.head')%>
+        </li>
+    </ol>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3><strong><%= @user.name.upcase%></strong> </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-lg-6">
+                                <span class="bold"> Fecha de creacion:</span>
+                                <p><%= @user.created_at%></p>
+                            </div>
+                            <div class="col-lg-6">
+                                <span class="bold">Fecha de ultimo ingreso:</span>
+                                <p><%= @user.last_sign_in_at%></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <hr>
+                            <div class="col-lg-6">
+                                <span class="bold"> Email:</span>
+                                <p><%= @user.email%></p>
+                            </div>
+                            <div class="col-lg-6">
+                                <span class="bold">Nombre Usuario:</span>
+                                <p><%= @user.username%></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="col-lg-6">
+                                <span class="bold">Transportista: </span>
+                                <p><%= @user.carrier%></p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <hr>
+                            <div class="col-lg-6">
+                                <span class="bold"> Telefono Fijo:</span>
+                                <p><%= @user.landline%></p>
+                            </div>
+                            <div class="col-lg-6">
+                                <span class="bold">Telefono Celular:</span>
+                                <p><%= @user.cell_phone%></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <hr>
+                            <div class="col-lg-4">
+                                <span class="bold">Carga Liquida: </span>
+                                <p>false</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <span class="bold">Carga General: </span>
+                                <p>true</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <span class="bold">Contenedor: </span>
+                                <p>false</p>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

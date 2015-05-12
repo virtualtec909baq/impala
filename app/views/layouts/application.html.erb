@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Impala Terminals: warehousing, logistics, port services | Impala Terminals</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	<!-- Fixed navbar -->
+	<%- if user_signed_in?%>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+	                <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="<%root_path%>" class="navbar-brand"><%= t('.brand')%></a>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar">
+					<ul class="nav navbar-nav">
+						<%puts params.inspect%>
+						<li class="<%if params[:controller] == 'offers' and !params[:index_2] %> active <%end %>"><a href="<%= root_path%>"><%= t('.home')%></a></li>
+						<%if current_user.kind == "admin"%>
+							<li class="<%if params[:index_2] %> active <%end %>"><a href="<%= offers_path(index_2: true)%>"><%= t('.offer')%></a></li>
+							<li class="<%if params[:controller] == 'users' %> active <%end %>"><a href="<%= users_path%>"><%= t('.provider')%></a></li>
+							<li class="<%if params[:controller] == 'products' %> active <%end %>"><a href="<%= products_path%>"><%= t('.product')%></a></li>
+							<li class="<%if params[:controller] == 'locations' %> active <%end %>"><a href="<%= locations_path%>"><%= t('.location')%></a></li>
+							<li class="<%if params[:controller] == 'measures' %> active <%end %>"><a href="<%= measures_path%>"><%= t('.measures')%></a></li>
+						<%end%>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a data-toggle="dropdown" class="dropdown-toggle avatar pull-right" href="#">
+								<span class="hidden-small"><i class="fa fa-user fa-fw"></i>
+									<i class="fa fa-caret-down"></i></span>
+								</a>
+								<ul class="dropdown-menu pull-right">
+									<li>
+										<%=link_to(t('.profile'), edit_user_registration_path)%>
+
+									</li>
+									<li>
+										<%=link_to(t('.log_out'), destroy_user_session_path, :method => :delete)%>
+									</li>
+								</ul>
+							</li>
+						</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+	<%end%>
+	
+	<div role="main" class="container page-content">
+		<%= render(partial: 'layouts/share') %>
+		<%= yield%>
+	</div> <!-- /container -->
+</body>
+</html>

@@ -1,0 +1,13 @@
+<hr>
+= form_for @measure , html: { class: 'form-horizontal ', role: "form"} do |f|
+  - if @measure.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@measure.errors.count, "error")} prohibited this measure from being saved:"
+      ul
+        - @measure.errors.full_messages.each do |message|
+          li = message
+
+  .form-group
+    = f.label :unit
+    = f.text_field :unit, :class =>"form-control"
+  .actions = f.submit

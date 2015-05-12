@@ -1,0 +1,19 @@
+#filterrific_results
+  table.table.table-striped.table-hover.table-bordered
+    thead
+    tr
+      th #
+      th Unidad
+      th
+      th
+      - @measures.each do |measure|
+        tr
+          th = measure.id
+          td = measure.unit
+          td
+            = link_to edit_measure_path(measure)
+              span.glyphicon.glyphicon-pencil
+          td =  link_to measure, data: {:confirm => 'Esta seguro que desea elimanar este unidad'}, :method => :delete do
+              span.glyphicon.glyphicon-trash
+  = will_paginate @measures, :locals => { :measures => @measures }, renderer: BootstrapPagination::Rails
+

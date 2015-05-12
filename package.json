@@ -1,0 +1,14 @@
+{
+  "name": "impala",
+  "version": "1.0.0",
+  "dependencies": {
+    "bower": "latest"
+  },
+  "engine": {
+    "node": "latest",
+    "npm": "latest"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+  }
+}

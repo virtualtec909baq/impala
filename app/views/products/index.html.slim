@@ -1,0 +1,11 @@
+.page-header
+  ol.breadcrumb
+    li.active
+      i.fa.fa-bookmark
+      | LISTADO DE PRODUCTOS
+
+= render(partial: 'products/filters')
+= render(partial: 'products/list',locals: { products: @products })
+
+
+

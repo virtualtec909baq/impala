@@ -1,0 +1,35 @@
+<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Ranking Proveedores</h3>
+				</div>
+				<table class="table table-hover" id="dev-table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Nombre</th>
+							<th>Transportista</th>
+							<th>Cantidad a transportar</th>
+							<th>Precio</th>
+							<th>Telefono Fijo</th>
+							<th>Telefono Celular</th>
+						</tr>
+					</thead>
+					<tbody>
+						<%@offer_users.each do |offer_user|%>
+							<tr>
+								<td><%= offer_user.id%></td>
+								<td><%= offer_user.user.name %></td>
+								<td><%= offer_user.user.carrier %></td>
+								<td><%= offer_user.quantity %></td>
+								<td><%= offer_user.price %></td>
+								<td><%= offer_user.user.landline %></td>
+								<td><%= offer_user.user.cell_phone %></td>
+							</tr>
+						<%end%>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>

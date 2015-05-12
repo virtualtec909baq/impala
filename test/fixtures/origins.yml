@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  destination: MyString
+  product: MyString
+  volumen: 1.5
+  service_start_date: 2015-04-07
+  service_finish_date: 2015-04-07
+  offer_start_date: 2015-04-07
+  offer_finish_date: 2015-04-07
+  liquid_load: false
+  container: false
+  general_load: false
+  load_compensation: false
+  kind: MyString
+  unit: MyString
+  price: 1.5
+
+two:
+  destination: MyString
+  product: MyString
+  volumen: 1.5
+  service_start_date: 2015-04-07
+  service_finish_date: 2015-04-07
+  offer_start_date: 2015-04-07
+  offer_finish_date: 2015-04-07
+  liquid_load: false
+  container: false
+  general_load: false
+  load_compensation: false
+  kind: MyString
+  unit: MyString
+  price: 1.5

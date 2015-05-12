@@ -1,0 +1,23 @@
+{
+  "name": "impala",
+  "version": "0.0.0",
+  "authors": [
+    "jquiu <jenniffer54@gmail.com>"
+  ],
+  "main": "?",
+  "license": "MIT",
+  "private": true,
+"ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "vendor/assets/components"
+  ],
+  "dependencies": {
+    "modernizr": "~2.8.3",
+    "normalize.css": "~3.0.1",
+    "bootstrap": "~3.2.0"
+  }
+}

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html id="sv"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>#340 DataTables - RailsCasts</title>
+    <meta name="description" content="Short Ruby on Rails screencasts containing tips, tricks and tutorials. Great for both novice and experienced web developers.">
+    <meta name="keywords" content="rails, ruby on rails, screencasts, railscast, railscasts, tips, tricks, tutorials, training, podcasts, programming">
+    <link rel="alternate" type="application/rss+xml" title="Episodes RSS" href="http://feeds.feedburner.com/railscasts">
+    <link href="%23340%20DataTables%20-%20RailsCasts_files/application-f33052609391fcb2333fb8c560544e00.css" media="screen" rel="stylesheet" type="text/css">
+    <script src="%23340%20DataTables%20-%20RailsCasts_files/ga.js" async="" type="text/javascript"></script><script src="%23340%20DataTables%20-%20RailsCasts_files/widgets.js" id="twitter-wjs"></script><script src="%23340%20DataTables%20-%20RailsCasts_files/3s7oes9q_002.js" type="text/javascript"></script>
+    <script src="%23340%20DataTables%20-%20RailsCasts_files/application-fe460ed6c034ee8c95a2a78f52d7a5d9.js" type="text/javascript"></script>
+    <meta content="authenticity_token" name="csrf-param">
+<meta content="3F50OePVB9PVEH81xii6w8uPumKslbTfulHW/e0w2oM=" name="csrf-token">
+    
+  <script async="" src="%23340%20DataTables%20-%20RailsCasts_files/sa.js" type="text/javascript"></script><script async="" src="%23340%20DataTables%20-%20RailsCasts_files/3s7oes9q.js" type="text/javascript"></script><style type="text/css">#sv .sublimevideo-Label{overflow:hidden!important;text-align:left!important;} #sv .sublimevideo-Button{background:none!important;border:none!important;margin:0!important;outline:none!important;padding:0!important;font-size:0!important;line-height:0!important;overflow:visible!important;cursor:pointer!important;} #sv .sublimevideo-View{-webkit-tap-highlight-color:rgba(0,0,0,0)!important;display:block!important;position:absolute!important;text-shadow:none!important;border:none!important;z-index:auto!important;} #sv .sublimevideo-VideoView{line-height:0!important;background:black!important;direction:ltr!important;padding:0!important;text-align:center!important;-webkit-user-select:none!important;-moz-user-select:none!important;} #sv .sublimevideo-VideoView * {padding:0!important;margin:0!important;border:none!important;overflow:visible!important;background:none!important;float:none!important;z-index:auto!important;-moz-border-radius:0!important;-webkit-border-radius:0!important;border-radius:0!important;-moz-box-shadow:none!important;-webkit-box-shadow:none!important;box-shadow:none!important;text-transform:none!important;text-decoration:none!important;max-width:none!important;top:auto!important;bottom:auto!important;left:auto!important;right:auto!important;} </style><style type="text/css">#sv .sublimevideo-subtitles0 * {font-size:12px!important;font-family:HelveticaNeue,Helvetica,Arial,sans-serif!important;padding:0!important;margin:0!important;border:none!important;overflow:visible!important;float:none!important;-moz-border-radius:0!important;-webkit-border-radius:0!important;border-radius:0!important;-moz-box-shadow:none!important;-webkit-box-shadow:none!important;box-shadow:none!important;text-transform:none!important;text-decoration:none!important;max-width:none!important;} </style></head>
+  <body data-twttr-rendered="true">
+    <div id="top">
+      <div class="logo"><a href="http://railscasts.com/"><img alt="RailsCasts - Ruby on Rails Screencasts" src="%23340%20DataTables%20-%20RailsCasts_files/railscasts_logo-7101a7cd0a48292a0c07276981855edb.png" height="56" width="423"></a></div>
+      <div class="user_nav">
+          <a href="http://railscasts.com/login?return_to=http%3A%2F%2Frailscasts.com%2Fepisodes%2F340-datatables">Sign in through GitHub</a>
+      </div>
+      <ul class="subscribe horizontal">
+        <li>
+          <a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=218282043"><img alt="Itunes" src="%23340%20DataTables%20-%20RailsCasts_files/itunes-ea9253b9b183d9788bef2cdfe326f38e.png" height="34" width="34"></a>
+          <span class="name">watch on iTunes</span>
+        </li>
+        <li>
+          <a href="http://twitter.com/railscasts"><img alt="Twitter" src="%23340%20DataTables%20-%20RailsCasts_files/twitter-f0259ab802804e09139fb29f47678b2c.png" height="34" width="34"></a>
+          <span class="name">follow on Twitter</span>
+        </li>
+        <li>
+          <a href="http://www.facebook.com/pages/railscasts/197415140659"><img alt="Facebook" src="%23340%20DataTables%20-%20RailsCasts_files/facebook-0ab869e74b54d9c58f33c1c75264d869.png" height="34" width="34"></a>
+          <span class="name">follow on Facebook</span>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/railscasts"><img alt="Rss" src="%23340%20DataTables%20-%20RailsCasts_files/rss-04cb962054caa957a6fa3924c48594d8.png" height="34" width="34"></a>
+          <span class="name">subscribe to RSS feed</span>
+        </li>
+      </ul>
+    </div>
+
+    <div id="nav_bar">
+      <ul class="nav horizontal">
+        <li><a href="http://railscasts.com/">Browse Episodes</a></li>
+        <li><a href="http://railscasts.com/pro">RailsCasts Pro</a></li>
+        <li><a href="http://railscasts.com/notifications">Notifications</a></li>
+        <li><a href="http://railscasts.com/about">About</a></li>
+        <li><a href="http://railscasts.com/feedback">Feedback</a></li>
+      </ul>
+      <form accept-charset="UTF-8" action="http://railscasts.com/episodes" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"></div>
+        <input id="search" name="search" size="35" type="text">
+        <input value="Search Episodes" type="submit">
+</form>    </div>
+
+    <div id="announcement_banner">
+  <p>Please read for an updated status on RailsCasts:</p>
+
+  <p><a href="http://railscasts.com/announcements/12">Learn more</a> or <a href="http://railscasts.com/announcements/12/hide" data-remote="true">hide this</a></p>
+</div>
+
+
+
+    <div id="main">
+
+      
+  <div id="episode">
+    <div style="" id="video_wrapper"><span id="sv_player_0" style="position: relative ! important; top: 0px ! important; height: 600px ! important; left: 0px ! important; width: 960px ! important; display: block ! important; margin: 0px ! important; cursor: none ! important;" class="sublimevideo-View sublimevideo-VideoView"><span style="top: 0px ! important; bottom: 0px ! important; margin: 0px ! important; height: 100% ! important; left: 0px ! important; right: 0px ! important; width: 100% ! important; max-width: 960px ! important;" class="sublimevideo-View sublimevideo-Video sublimevideo-Html5Video sublimevideo-FirefoxVideo"><video style="position: absolute ! important; top: 0px ! important; left: 0px ! important; width: 100% ! important; height: 100% ! important; visibility: visible ! important; display: block ! important;" preload="none" class="sv_force_fullscreen sv_force_flash" height="600" width="960"><source src="%23340%20DataTables%20-%20RailsCasts_files/340-datatables.mp4" type="video/mp4"><source src="%23340%20DataTables%20-%20RailsCasts_files/340-datatables_002.mp4" type="video/mp4"><source src="%23340%20DataTables%20-%20RailsCasts_files/340-datatables.webm" type="video/webm"><source src="%23340%20DataTables%20-%20RailsCasts_files/340-datatables.ogv" type="video/ogg"></video></span><span style="opacity: 0 ! important; pointer-events: none ! important; overflow: hidden ! important; top: 0px ! important; bottom: 0px ! important; margin: 0px ! important; height: 100% ! important; left: 0px ! important; right: 0px ! important; width: 100% ! important; background: none repeat scroll 0% 0% black ! important; display: none ! important;" class="sublimevideo-View sublimevideo-ImageView"><img src="%23340%20DataTables%20-%20RailsCasts_files/loading.png" style="position: absolute ! important; display: block ! important; width: 960px ! important; height: 600px ! important; top: 0px ! important; left: 0px ! important; max-width: 960px ! important; max-height: none ! important;" height="0" width="960"></span><span style="top: 0px ! important; bottom: 0px ! important; margin: 0px ! important; height: 100% ! important; left: 0px ! important; right: 0px ! important; width: 100% ! important;" class="sublimevideo-View"><span style="z-index: 99 ! important; height: 30px ! important; bottom: 0px ! important; left: 0px ! important; right: 0px ! important; margin-left: 0px ! important; margin-right: 0px ! important; width: 100% ! important; display: none ! important; opacity: 0 ! important;" class="sublimevideo-View sublimevideo-AbstractControlsView sublimevideo-InlineControlsView"><svg height="30" width="960" style="background: none repeat scroll 0% 0% transparent ! important; pointer-events: none ! important; position: absolute ! important; top: 0px ! important; left: 0px ! important; width: 960px ! important; height: 30px ! important;" xmlns="http://www.w3.org/2000/svg" version="1.1"><g><g><defs><filter filterUnits="userSpaceOnUse" id="sublimeFilter22"><feOffset dy="-1" dx="0" result="14"></feOffset></filter><filter filterUnits="userSpaceOnUse" id="sublimeFilter25"><feOffset dy="1" dx="0" result="15"></feOffset></filter></defs><path mask="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeMask9&quot;)" filter="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeFilter22&quot;)" fill="rgba(0,0,0,1)" transform="" d="M0 1 L960 1 L960 30 L0 30 L0 1 Z"></path><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient24&quot;)" transform="" d="M0 1 L960 1 L960 30 L0 30 L0 1 Z"></path><path clip-path="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeClip4&quot;)" filter="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeFilter25&quot;)" fill="rgba(255,255,255,0.15)" d="M0 0 L0 30 L960 30 L960 0 L0 0M0 1 L960 1 L960 30 L0 30 L0 1 Z"></path></g></g><defs><linearGradient y2="1" x2="480" y1="30" x1="480" gradientUnits="userSpaceOnUse" id="sublimeGradient23"><stop style="stop-color:rgb(15,15,15);stop-opacity:0.89" offset="0%"></stop><stop style="stop-color:rgb(40,40,40);stop-opacity:0.89" offset="100%"></stop></linearGradient><mask maskUnits="userSpaceOnUse" id="sublimeMask9"><rect fill="white" height="100%" width="100%" y="0" x="0"></rect><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient23&quot;)" d="M0 1 L960 1 L960 30 L0 30 L0 1 Z"></path></mask><linearGradient y2="1" x2="480" y1="30" x1="480" gradientUnits="userSpaceOnUse" id="sublimeGradient24"><stop style="stop-color:rgb(15,15,15);stop-opacity:0.89" offset="0%"></stop><stop style="stop-color:rgb(40,40,40);stop-opacity:0.89" offset="100%"></stop></linearGradient><clipPath id="sublimeClip4"><path transform="" d="M0 1 L960 1 L960 30 L0 30 L0 1 Z"></path></clipPath></defs></svg><span style="z-index: 2 ! important; top: 3px ! important; height: 25px ! important; left: 0px ! important; right: 0px ! important; margin-left: 87px ! important; margin-right: 71px ! important; width: auto ! important;" class="sublimevideo-View sublimevideo-Button sublimevideo-Slider sublimevideo-ProgressBar"><svg height="29" width="806" style="background: none repeat scroll 0% 0% transparent ! important; pointer-events: none ! important; position: absolute ! important; top: -2px ! important; left: -2px ! important; width: 806px ! important; height: 29px ! important;" xmlns="http://www.w3.org/2000/svg" version="1.1"><g><g><defs><filter filterUnits="userSpaceOnUse" id="sublimeFilter14"><feOffset dy="2" dx="0" result="10"></feOffset></filter><filter filterUnits="userSpaceOnUse" id="sublimeFilter17"><feOffset dy="1" dx="0" result="11"></feOffset><feGaussianBlur stdDeviation="1.7599999999999998" result="12"></feGaussianBlur></filter></defs><path mask="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeMask6&quot;)" filter="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeFilter14&quot;)" fill="rgba(255,255,255,0.06)" transform="" d="M6 11 L799.9999999999998 11 A4, 4, 90, 0, 1, 804, 15.00000000000017 A4, 4, 90, 0, 1, 799.9999999999999, 19 L6 19 A4, 4, 90, 0, 1, 2, 15.000000000000002 A4, 4, 90, 0, 1, 6, 11 Z"></path><path stroke-width="2" fill="none" stroke="rgba(0,0,0,0.65)" stroke-linejoin="round" transform="" d="M6 11 L799.9999999999998 11 A4, 4, 90, 0, 1, 804, 15.00000000000017 A4, 4, 90, 0, 1, 799.9999999999999, 19 L6 19 A4, 4, 90, 0, 1, 2, 15.000000000000002 A4, 4, 90, 0, 1, 6, 11 Z"></path><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient16&quot;)" transform="" d="M6 11 L799.9999999999998 11 A4, 4, 90, 0, 1, 804, 15.00000000000017 A4, 4, 90, 0, 1, 799.9999999999999, 19 L6 19 A4, 4, 90, 0, 1, 2, 15.000000000000002 A4, 4, 90, 0, 1, 6, 11 Z"></path><path clip-path="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeClip3&quot;)" filter="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeFilter17&quot;)" stroke-linejoin="round" stroke="rgba(0,0,0,0.25)" stroke-width="0" fill="rgba(0,0,0,0.25)" d="M0 0 L0 29 L806 29 L806 0 L0 0M6 11 L799.9999999999998 11 A4, 4, 90, 0, 1, 804, 15.00000000000017 A4, 4, 90, 0, 1, 799.9999999999999, 19 L6 19 A4, 4, 90, 0, 1, 2, 15.000000000000002 A4, 4, 90, 0, 1, 6, 11 Z"></path></g></g><defs><linearGradient y2="9" x2="419.5" y1="17" x1="419.5" gradientUnits="userSpaceOnUse" id="sublimeGradient15"><stop style="stop-color:rgb(121,121,121);stop-opacity:1" offset="0%"></stop><stop style="stop-color:rgb(81,81,81);stop-opacity:1" offset="100%"></stop></linearGradient><mask maskUnits="userSpaceOnUse" id="sublimeMask6"><rect fill="white" height="100%" width="100%" y="0" x="0"></rect><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient15&quot;)" d="M6 11 L799.9999999999998 11 A4, 4, 90, 0, 1, 804, 15.00000000000017 A4, 4, 90, 0, 1, 799.9999999999999, 19 L6 19 A4, 4, 90, 0, 1, 2, 15.000000000000002 A4, 4, 90, 0, 1, 6, 11 Z"></path></mask><linearGradient y2="9" x2="419.5" y1="17" x1="419.5" gradientUnits="userSpaceOnUse" id="sublimeGradient16"><stop style="stop-color:rgb(121,121,121);stop-opacity:1" offset="0%"></stop><stop style="stop-color:rgb(81,81,81);stop-opacity:1" offset="100%"></stop></linearGradient><clipPath id="sublimeClip3"><path transform="" d="M6 11 L799.9999999999998 11 A4, 4, 90, 0, 1, 804, 15.00000000000017 A4, 4, 90, 0, 1, 799.9999999999999, 19 L6 19 A4, 4, 90, 0, 1, 2, 15.000000000000002 A4, 4, 90, 0, 1, 6, 11 Z"></path></clipPath></defs></svg><span style="display: none ! important; top: 0px ! important; height: 25px ! important; left: 0px ! important; width: 802px ! important; opacity: 0 ! important;" class="sublimevideo-View"><svg height="25" width="802" style="background: none repeat scroll 0% 0% transparent ! important; pointer-events: none ! important; position: absolute ! important; top: 0px ! important; left: 0px ! important; width: 802px ! important; height: 25px ! important;" xmlns="http://www.w3.org/2000/svg" version="1.1"><g><g clip-path="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeClip5&quot;)"><path fill="rgba(0,0,0,0.2)" transform="" d="M-8.239999985913812 9 L1.760000014086188 9 L-6.239999985913812 17 L-16.239999985913812 17 L-8.239999985913812 9 M11.760000014086188 9 L21.760000014086188 9 L13.760000014086188 17 L3.760000014086188 17 L11.760000014086188 9 M31.760000014086188 9 L41.76000001408619 9 L33.76000001408619 17 L23.760000014086188 17 L31.760000014086188 9 M51.76000001408619 9 L61.76000001408619 9 L53.76000001408619 17 L43.76000001408619 17 L51.76000001408619 9 M71.76000001408619 9 L81.76000001408619 9 L73.76000001408619 17 L63.76000001408619 17 L71.76000001408619 9 M91.76000001408619 9 L101.76000001408619 9 L93.76000001408619 17 L83.76000001408619 17 L91.76000001408619 9 M111.76000001408619 9 L121.76000001408619 9 L113.76000001408619 17 L103.76000001408619 17 L111.76000001408619 9 M131.7600000140862 9 L141.7600000140862 9 L133.7600000140862 17 L123.76000001408619 17 L131.7600000140862 9 M151.7600000140862 9 L161.7600000140862 9 L153.7600000140862 17 L143.7600000140862 17 L151.7600000140862 9 M171.7600000140862 9 L181.7600000140862 9 L173.7600000140862 17 L163.7600000140862 17 L171.7600000140862 9 M191.7600000140862 9 L201.7600000140862 9 L193.7600000140862 17 L183.7600000140862 17 L191.7600000140862 9 M211.7600000140862 9 L221.7600000140862 9 L213.7600000140862 17 L203.7600000140862 17 L211.7600000140862 9 M231.7600000140862 9 L241.7600000140862 9 L233.7600000140862 17 L223.7600000140862 17 L231.7600000140862 9 M251.7600000140862 9 L261.7600000140862 9 L253.7600000140862 17 L243.7600000140862 17 L251.7600000140862 9 M271.7600000140862 9 L281.7600000140862 9 L273.7600000140862 17 L263.7600000140862 17 L271.7600000140862 9 M291.7600000140862 9 L301.7600000140862 9 L293.7600000140862 17 L283.7600000140862 17 L291.7600000140862 9 M311.7600000140862 9 L321.7600000140862 9 L313.7600000140862 17 L303.7600000140862 17 L311.7600000140862 9 M331.7600000140862 9 L341.7600000140862 9 L333.7600000140862 17 L323.7600000140862 17 L331.7600000140862 9 M351.7600000140862 9 L361.7600000140862 9 L353.7600000140862 17 L343.7600000140862 17 L351.7600000140862 9 M371.7600000140862 9 L381.7600000140862 9 L373.7600000140862 17 L363.7600000140862 17 L371.7600000140862 9 M391.7600000140862 9 L401.7600000140862 9 L393.7600000140862 17 L383.7600000140862 17 L391.7600000140862 9 M411.7600000140862 9 L421.7600000140862 9 L413.7600000140862 17 L403.7600000140862 17 L411.7600000140862 9 M431.7600000140862 9 L441.7600000140862 9 L433.7600000140862 17 L423.7600000140862 17 L431.7600000140862 9 M451.7600000140862 9 L461.7600000140862 9 L453.7600000140862 17 L443.7600000140862 17 L451.7600000140862 9 M471.7600000140862 9 L481.7600000140862 9 L473.7600000140862 17 L463.7600000140862 17 L471.7600000140862 9 M491.7600000140862 9 L501.7600000140862 9 L493.7600000140862 17 L483.7600000140862 17 L491.7600000140862 9 M511.7600000140862 9 L521.7600000140862 9 L513.7600000140862 17 L503.7600000140862 17 L511.7600000140862 9 M531.7600000140862 9 L541.7600000140862 9 L533.7600000140862 17 L523.7600000140862 17 L531.7600000140862 9 M551.7600000140862 9 L561.7600000140862 9 L553.7600000140862 17 L543.7600000140862 17 L551.7600000140862 9 M571.7600000140862 9 L581.7600000140862 9 L573.7600000140862 17 L563.7600000140862 17 L571.7600000140862 9 M591.7600000140862 9 L601.7600000140862 9 L593.7600000140862 17 L583.7600000140862 17 L591.7600000140862 9 M611.7600000140862 9 L621.7600000140862 9 L613.7600000140862 17 L603.7600000140862 17 L611.7600000140862 9 M631.7600000140862 9 L641.7600000140862 9 L633.7600000140862 17 L623.7600000140862 17 L631.7600000140862 9 M651.7600000140862 9 L661.7600000140862 9 L653.7600000140862 17 L643.7600000140862 17 L651.7600000140862 9 M671.7600000140862 9 L681.7600000140862 9 L673.7600000140862 17 L663.7600000140862 17 L671.7600000140862 9 M691.7600000140862 9 L701.7600000140862 9 L693.7600000140862 17 L683.7600000140862 17 L691.7600000140862 9 M711.7600000140862 9 L721.7600000140862 9 L713.7600000140862 17 L703.7600000140862 17 L711.7600000140862 9 M731.7600000140862 9 L741.7600000140862 9 L733.7600000140862 17 L723.7600000140862 17 L731.7600000140862 9 M751.7600000140862 9 L761.7600000140862 9 L753.7600000140862 17 L743.7600000140862 17 L751.7600000140862 9 M771.7600000140862 9 L781.7600000140862 9 L773.7600000140862 17 L763.7600000140862 17 L771.7600000140862 9 M791.7600000140862 9 L801.7600000140862 9 L793.7600000140862 17 L783.7600000140862 17 L791.7600000140862 9 M811.7600000140862 9 L821.7600000140862 9 L813.7600000140862 17 L803.7600000140862 17 L811.7600000140862 9 M831.7600000140862 9 L841.7600000140862 9 L833.7600000140862 17 L823.7600000140862 17 L831.7600000140862 9 M851.7600000140862 9 L861.7600000140862 9 L853.7600000140862 17 L843.7600000140862 17 L851.7600000140862 9 M871.7600000140862 9 L881.7600000140862 9 L873.7600000140862 17 L863.7600000140862 17 L871.7600000140862 9 M891.7600000140862 9 L901.7600000140862 9 L893.7600000140862 17 L883.7600000140862 17 L891.7600000140862 9 Z"></path></g></g><defs><clipPath id="sublimeClip5"><path d="M4 9 L797.9999999999998 9 A4, 4, 90, 0, 1, 802, 13.00000000000017 A4, 4, 90, 0, 1, 797.9999999999999, 17 L4 17 A4, 4, 90, 0, 1, 0, 13.000000000000002 A4, 4, 90, 0, 1, 4, 9 Z"></path></clipPath></defs></svg></span><span style="top: 0px ! important; height: 25px ! important; left: 0px ! important; width: 802px ! important;" class="sublimevideo-View"><svg height="25" width="802" style="background: none repeat scroll 0% 0% transparent ! important; pointer-events: none ! important; position: absolute ! important; top: 0px ! important; left: 0px ! important; width: 802px ! important; height: 25px ! important;" xmlns="http://www.w3.org/2000/svg" version="1.1"><g><g><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient26&quot;)" transform="" d="M4 9 L797.9999999999998 9 A4, 4, 90, 0, 1, 802, 13.00000000000017 A4, 4, 90, 0, 1, 797.9999999999999, 17 L4 17 A4, 4, 90, 0, 1, 0, 13.000000000000002 A4, 4, 90, 0, 1, 4, 9 Z"></path></g></g><defs><linearGradient y2="9" x2="3" y1="17" x1="3" gradientUnits="userSpaceOnUse" id="sublimeGradient26"><stop style="stop-color:rgb(64,64,64);stop-opacity:1" offset="0%"></stop><stop style="stop-color:rgb(106,106,106);stop-opacity:1" offset="100%"></stop></linearGradient></defs></svg></span><span style="top: 0px ! important; bottom: 0px ! important; margin: 0px ! important; height: 100% ! important; left: 0px ! important; right: 0px ! important; width: 100% ! important;" class="sublimevideo-View"><svg height="27" width="804" style="background: none repeat scroll 0% 0% transparent ! important; pointer-events: none ! important; position: absolute ! important; top: -1px ! important; left: -1px ! important; width: 804px ! important; height: 27px ! important;" xmlns="http://www.w3.org/2000/svg" version="1.1"><g><g><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient27&quot;)" transform="" d="M5 10 L608.7481719723024 10 A4, 4, 90, 0, 1, 612.7481719723025, 14.000000000000085 A4, 4, 90, 0, 1, 608.7481719723023, 18 L5 18 A4, 4, 90, 0, 1, 1, 14.000000000000002 A4, 4, 90, 0, 1, 5, 10 Z"></path></g><g><path stroke-width="2" fill="none" stroke="rgba(0,0,0,1)" stroke-linejoin="round" transform="" d="M612.7481719723025 10 A4, 4, 90, 0, 1, 616.7481719723025, 14 A4, 4, 90, 0, 1, 612.7481719723023, 18 A4, 4, 90, 0, 1, 608.7481719723025, 13.99999999999983 A4, 4, 90, 0, 1, 612.7481719723024, 10 Z"></path><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient28&quot;)" transform="" d="M612.7481719723025 10 A4, 4, 90, 0, 1, 616.7481719723025, 14 A4, 4, 90, 0, 1, 612.7481719723023, 18 A4, 4, 90, 0, 1, 608.7481719723025, 13.99999999999983 A4, 4, 90, 0, 1, 612.7481719723024, 10 Z"></path></g></g><defs><linearGradient y2="9" x2="5" y1="17" x1="5" gradientUnits="userSpaceOnUse" id="sublimeGradient27"><stop style="stop-color:rgb(169,169,169);stop-opacity:1" offset="0%"></stop><stop style="stop-color:rgb(255,255,255);stop-opacity:1" offset="100%"></stop></linearGradient><linearGradient y2="9" x2="5" y1="17" x1="5" gradientUnits="userSpaceOnUse" id="sublimeGradient28"><stop style="stop-color:rgb(6,6,6);stop-opacity:1" offset="0%"></stop><stop style="stop-color:rgb(46,46,46);stop-opacity:1" offset="100%"></stop></linearGradient></defs></svg></span><span style="display: none ! important; top: -18px ! important; height: 36px ! important; left: 45px ! important; width: 44px ! important; opacity: 0 ! important;" class="sublimevideo-View sublimevideo-Button"><svg height="52" width="60" style="background: none repeat scroll 0% 0% transparent ! important; pointer-events: none ! important; position: absolute ! important; top: -8px ! important; left: -8px ! important; width: 60px ! important; height: 52px ! important;" xmlns="http://www.w3.org/2000/svg" version="1.1"><g><g><defs><filter filterUnits="userSpaceOnUse" id="sublimeFilter36"><feGaussianBlur stdDeviation="3.5134" result="20"></feGaussianBlur></filter></defs><path mask="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeMask13&quot;)" filter="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeFilter36&quot;)" stroke-linejoin="round" stroke="rgba(0,0,0,0.8)" stroke-width="0" fill="rgba(0,0,0,0.8)" transform="" d="M47.679 27.683 L33.312 27.683 L29.997 30.997 L26.682 27.683 L12.315 27.683 C10.484 27.683, 9 26.214, 9 24.402 L9 11.28 C9 9.469, 10.484 8, 12.315 8 L47.679 8 C49.51 8, 50.995 9.469, 50.995 11.28 L50.995 24.402 C50.995 26.214, 49.51 27.683, 47.679 27.683 Z"></path><path mask="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeMask14&quot;)" stroke-width="2" fill="none" stroke="rgba(0,0,0,1)" stroke-linejoin="round" transform="" d="M47.679 27.683 L33.312 27.683 L29.997 30.997 L26.682 27.683 L12.315 27.683 C10.484 27.683, 9 26.214, 9 24.402 L9 11.28 C9 9.469, 10.484 8, 12.315 8 L47.679 8 C49.51 8, 50.995 9.469, 50.995 11.28 L50.995 24.402 C50.995 26.214, 49.51 27.683, 47.679 27.683 Z"></path><path fill="rgba(15,15,15,0.8)" transform="" d="M47.679 27.683 L33.312 27.683 L29.997 30.997 L26.682 27.683 L12.315 27.683 C10.484 27.683, 9 26.214, 9 24.402 L9 11.28 C9 9.469, 10.484 8, 12.315 8 L47.679 8 C49.51 8, 50.995 9.469, 50.995 11.28 L50.995 24.402 C50.995 26.214, 49.51 27.683, 47.679 27.683 Z"></path></g><g><path fill="rgba(0,0,0,0.5)" transform="" d="M30 34 A5, 5, 90, 0, 1, 35, 39 A5, 5, 90, 0, 1, 30, 44 A5, 5, 90, 0, 1, 25, 39 A5, 5, 90, 0, 1, 29.999999999999996, 34 Z"></path></g></g><defs><mask maskUnits="userSpaceOnUse" id="sublimeMask13"><rect fill="white" height="100%" width="100%" y="0" x="0"></rect><path fill="black" d="M47.679 27.683 L33.312 27.683 L29.997 30.997 L26.682 27.683 L12.315 27.683 C10.484 27.683, 9 26.214, 9 24.402 L9 11.28 C9 9.469, 10.484 8, 12.315 8 L47.679 8 C49.51 8, 50.995 9.469, 50.995 11.28 L50.995 24.402 C50.995 26.214, 49.51 27.683, 47.679 27.683 Z"></path></mask><mask maskUnits="userSpaceOnUse" id="sublimeMask14"><rect fill="white" height="100%" width="100%" y="0" x="0"></rect><path fill="black" d="M47.679 27.683 L33.312 27.683 L29.997 30.997 L26.682 27.683 L12.315 27.683 C10.484 27.683, 9 26.214, 9 24.402 L9 11.28 C9 9.469, 10.484 8, 12.315 8 L47.679 8 C49.51 8, 50.995 9.469, 50.995 11.28 L50.995 24.402 C50.995 26.214, 49.51 27.683, 47.679 27.683 Z"></path></mask></defs></svg><span style="font-family: HelveticaNeue,Helvetica,Arial,sans-serif ! important; font-style: normal ! important; color: rgb(213, 213, 213) ! important; text-shadow: 1px 0px 1px rgb(0, 0, 0) ! important; text-align: center ! important; font-size: 11px ! important; font-weight: bold ! important; line-height: 19px ! important; padding: 0px ! important; border: medium none ! important; overflow: visible ! important; float: none ! important; border-radius: 0px ! important; box-shadow: none ! important; text-transform: none ! important; text-decoration: none ! important; max-width: none ! important; top: 0px ! important; bottom: 0px ! important; margin: 0px ! important; height: 100% ! important; left: 0px ! important; right: 0px ! important; width: 100% ! important;" class="sublimevideo-View sublimevideo-Label">00:46</span></span></span><span style="display: none ! important; opacity: 0 ! important; top: -20px ! important; height: 50px ! important; width: 70px ! important; right: 12px ! important;" class="sublimevideo-View"><span style="top: 10px ! important; height: 8px ! important; left: 6px ! important; width: 59px ! important;" class="sublimevideo-View sublimevideo-Button sublimevideo-Slider"><svg height="12" width="63" style="background: none repeat scroll 0% 0% transparent ! important; pointer-events: none ! important; position: absolute ! important; top: -2px ! important; left: -2px ! important; width: 63px ! important; height: 12px ! important;" xmlns="http://www.w3.org/2000/svg" version="1.1"><g><g><defs><filter filterUnits="userSpaceOnUse" id="sublimeFilter19"><feOffset dy="2" dx="0" result="13"></feOffset></filter></defs><path mask="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeMask7&quot;)" filter="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeFilter19&quot;)" fill="rgba(255,255,255,0.1)" transform="" d="M6 2 L56.99999999999999 2 A4, 4, 90, 0, 1, 61, 6 A4, 4, 90, 0, 1, 57, 10 L6 10 A4, 4, 90, 0, 1, 2, 6 A4, 4, 90, 0, 1, 6, 2 Z"></path><path mask="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeMask8&quot;)" stroke-width="2" fill="none" stroke="rgba(0,0,0,1)" stroke-linejoin="round" transform="" d="M6 2 L56.99999999999999 2 A4, 4, 90, 0, 1, 61, 6 A4, 4, 90, 0, 1, 57, 10 L6 10 A4, 4, 90, 0, 1, 2, 6 A4, 4, 90, 0, 1, 6, 2 Z"></path><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient21&quot;)" transform="" d="M6 1.7 L56.99999999999999 1.7 A4.3, 4.3, 90, 0, 1, 61.3, 5.999999999999996 A4.3, 4.3, 90, 0, 1, 56.999999999999986, 10.3 L6 10.3 A4.3, 4.3, 90, 0, 1, 1.7, 6.000000000000002 A4.3, 4.3, 90, 0, 1, 6.000000000000001, 1.7 Z"></path></g></g><defs><linearGradient y2="2" x2="31.5" y1="10" x1="31.5" gradientUnits="userSpaceOnUse" id="sublimeGradient20"><stop style="stop-color:rgb(40,40,40);stop-opacity:0.89" offset="0%"></stop><stop style="stop-color:rgb(15,15,15);stop-opacity:0.89" offset="100%"></stop></linearGradient><mask maskUnits="userSpaceOnUse" id="sublimeMask7"><rect fill="white" height="100%" width="100%" y="0" x="0"></rect><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient20&quot;)" d="M6 2 L56.99999999999999 2 A4, 4, 90, 0, 1, 61, 6 A4, 4, 90, 0, 1, 57, 10 L6 10 A4, 4, 90, 0, 1, 2, 6 A4, 4, 90, 0, 1, 6, 2 Z"></path></mask><mask maskUnits="userSpaceOnUse" id="sublimeMask8"><rect fill="white" height="100%" width="100%" y="0" x="0"></rect><path fill="black" d="M6 2 L56.99999999999999 2 A4, 4, 90, 0, 1, 61, 6 A4, 4, 90, 0, 1, 57, 10 L6 10 A4, 4, 90, 0, 1, 2, 6 A4, 4, 90, 0, 1, 6, 2 Z"></path></mask><linearGradient y2="2" x2="31.5" y1="10" x1="31.5" gradientUnits="userSpaceOnUse" id="sublimeGradient21"><stop style="stop-color:rgb(40,40,40);stop-opacity:0.89" offset="0%"></stop><stop style="stop-color:rgb(15,15,15);stop-opacity:0.89" offset="100%"></stop></linearGradient></defs></svg><span style="top: 0px ! important; bottom: 0px ! important; margin: 0px ! important; height: 100% ! important; left: 0px ! important; right: 0px ! important; width: 100% ! important;" class="sublimevideo-View"><svg height="10" width="61" style="background: none repeat scroll 0% 0% transparent ! important; pointer-events: none ! important; position: absolute ! important; top: -1px ! important; left: -1px ! important; width: 61px ! important; height: 10px ! important;" xmlns="http://www.w3.org/2000/svg" version="1.1"><g><g><path stroke-width="2" fill="none" stroke="rgba(0,0,0,1)" stroke-linejoin="round" transform="" d="M30.5 1 A4, 4, 90, 0, 1, 34.5, 5 A4, 4, 90, 0, 1, 30.5, 9 A4, 4, 90, 0, 1, 26.5, 5 A4, 4, 90, 0, 1, 30.5, 1 Z"></path><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient18&quot;)" transform="" d="M30.5 1 A4, 4, 90, 0, 1, 34.5, 5 A4, 4, 90, 0, 1, 30.5, 9 A4, 4, 90, 0, 1, 26.5, 5 A4, 4, 90, 0, 1, 30.5, 1 Z"></path></g></g><defs><linearGradient y2="0" x2="5" y1="8" x1="5" gradientUnits="userSpaceOnUse" id="sublimeGradient18"><stop style="stop-color:rgb(169,169,169);stop-opacity:1" offset="0%"></stop><stop style="stop-color:rgb(255,255,255);stop-opacity:1" offset="100%"></stop></linearGradient></defs></svg></span></span></span><span style="top: 0px ! important; height: 30px ! important; left: 37px ! important; width: 36px ! important;" class="sublimevideo-View sublimevideo-Button sublimevideo-TimeButton"><span style="font-size: 12px ! important; font-family: Helvetica,Arial,sans-serif ! important; font-weight: bold ! important; line-height: 32px ! important; padding: 0px ! important; border: medium none ! important; overflow: visible ! important; float: none ! important; border-radius: 0px ! important; box-shadow: none ! important; text-transform: none ! important; text-decoration: none ! important; max-width: none ! important; font-style: normal ! important; color: rgb(213, 213, 213) ! important; text-shadow: 1px 0px 1px rgb(0, 0, 0) ! important; top: 0px ! important; bottom: 0px ! important; margin: 0px ! important; height: 100% ! important; left: 0px ! important; right: 0px ! important; width: 100% ! important;" class="sublimevideo-View sublimevideo-Label">07:24</span></span><span style="top: 0px ! important; height: 30px ! important; width: 30px ! important; right: 32px ! important;" class="sublimevideo-View sublimevideo-Button sublimevideo-VolumeButton"><svg height="34" width="34" style="background: none repeat scroll 0% 0% transparent ! important; pointer-events: none ! important; position: absolute ! important; top: -2px ! important; left: -2px ! important; width: 34px ! important; height: 34px ! important;" xmlns="http://www.w3.org/2000/svg" version="1.1"><g><g mask="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeMask12&quot;)"><defs><filter filterUnits="userSpaceOnUse" id="sublimeFilter32"><feOffset dy="1" dx="0" result="18"></feOffset><feGaussianBlur stdDeviation="0.8" result="19"></feGaussianBlur></filter></defs><path mask="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeMask11&quot;)" filter="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeFilter32&quot;)" stroke-linejoin="round" stroke="rgba(0,0,0,1)" stroke-width="0" fill="rgba(0,0,0,1)" transform="" d="M8 14 L13 14 L19 10 L19 25 L13 21 L8 21 L8 14 M22 10 L27 10 L27 11 L22 11 L22 10 M22 12 L27 12 L27 13 L22 13 L22 12 M22 14 L27 14 L27 15 L22 15 L22 14 M22 16 L27 16 L27 17 L22 17 L22 16 M22 18 L27 18 L27 19 L22 19 L22 18 M22 20 L27 20 L27 21 L22 21 L22 20 M22 22 L27 22 L27 23 L22 23 L22 22 M22 24 L27 24 L27 25 L22 25 L22 24 Z"></path><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient34&quot;)" transform="" d="M8 14 L13 14 L19 10 L19 25 L13 21 L8 21 L8 14 M22 10 L27 10 L27 11 L22 11 L22 10 M22 12 L27 12 L27 13 L22 13 L22 12 M22 14 L27 14 L27 15 L22 15 L22 14 M22 16 L27 16 L27 17 L22 17 L22 16 M22 18 L27 18 L27 19 L22 19 L22 18 M22 20 L27 20 L27 21 L22 21 L22 20 M22 22 L27 22 L27 23 L22 23 L22 22 M22 24 L27 24 L27 25 L22 25 L22 24 Z"></path></g></g><defs><linearGradient y2="10" x2="17.5" y1="25" x1="17.5" gradientUnits="userSpaceOnUse" id="sublimeGradient33"><stop style="stop-color:rgb(169,169,169);stop-opacity:1" offset="0%"></stop><stop style="stop-color:rgb(255,255,255);stop-opacity:1" offset="100%"></stop></linearGradient><mask maskUnits="userSpaceOnUse" id="sublimeMask11"><rect fill="white" height="100%" width="100%" y="0" x="0"></rect><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient33&quot;)" d="M8 14 L13 14 L19 10 L19 25 L13 21 L8 21 L8 14 M22 10 L27 10 L27 11 L22 11 L22 10 M22 12 L27 12 L27 13 L22 13 L22 12 M22 14 L27 14 L27 15 L22 15 L22 14 M22 16 L27 16 L27 17 L22 17 L22 16 M22 18 L27 18 L27 19 L22 19 L22 18 M22 20 L27 20 L27 21 L22 21 L22 20 M22 22 L27 22 L27 23 L22 23 L22 22 M22 24 L27 24 L27 25 L22 25 L22 24 Z"></path></mask><linearGradient y2="10" x2="17.5" y1="25" x1="17.5" gradientUnits="userSpaceOnUse" id="sublimeGradient34"><stop style="stop-color:rgb(169,169,169);stop-opacity:1" offset="0%"></stop><stop style="stop-color:rgb(255,255,255);stop-opacity:1" offset="100%"></stop></linearGradient><linearGradient y2="8" x2="24.5" y1="15" x1="24.5" gradientUnits="userSpaceOnUse" id="sublimeGradient35"><stop style="stop-color:rgb(0,0,0);stop-opacity:0.51" offset="0%"></stop><stop style="stop-color:rgb(0,0,0);stop-opacity:0.68" offset="100%"></stop></linearGradient><mask maskUnits="userSpaceOnUse" id="sublimeMask12"><rect fill="white" height="100%" width="100%" y="0" x="0"></rect><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient35&quot;)" d="M22 10 L27 10 L27 11 L22 11 L22 10 M22 12 L27 12 L27 13 L22 13 L22 12 M22 14 L27 14 L27 15 L22 15 L22 14 M22 16 L27 16 L27 17 L22 17 L22 16 Z"></path></mask></defs></svg></span><span style="top: 0px ! important; height: 30px ! important; width: 30px ! important; right: 1px ! important;" class="sublimevideo-View sublimevideo-Button"><svg height="34" width="34" style="background: none repeat scroll 0% 0% transparent ! important; pointer-events: none ! important; position: absolute ! important; top: -2px ! important; left: -2px ! important; width: 34px ! important; height: 34px ! important;" xmlns="http://www.w3.org/2000/svg" version="1.1"><g><g><defs><filter filterUnits="userSpaceOnUse" id="sublimeFilter29"><feOffset dy="1" dx="0" result="16"></feOffset><feGaussianBlur stdDeviation="0.8" result="17"></feGaussianBlur></filter></defs><path mask="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeMask10&quot;)" filter="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeFilter29&quot;)" stroke-linejoin="round" stroke="rgba(0,0,0,1)" stroke-width="0" fill="rgba(0,0,0,1)" transform="" d="M10 10 L17 10 L14.2 12.8 L17 15.6 L15.6 17 L12.8 14.2 L10 17 L10 10 M25 25 L18 25 L20.8 22.2 L18 19.4 L19.4 18 L22.2 20.8 L25 18 L25 25 Z"></path><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient31&quot;)" transform="" d="M10 10 L17 10 L14.2 12.8 L17 15.6 L15.6 17 L12.8 14.2 L10 17 L10 10 M25 25 L18 25 L20.8 22.2 L18 19.4 L19.4 18 L22.2 20.8 L25 18 L25 25 Z"></path></g></g><defs><linearGradient y2="10" x2="17.5" y1="25" x1="17.5" gradientUnits="userSpaceOnUse" id="sublimeGradient30"><stop style="stop-color:rgb(169,169,169);stop-opacity:1" offset="0%"></stop><stop style="stop-color:rgb(255,255,255);stop-opacity:1" offset="100%"></stop></linearGradient><mask maskUnits="userSpaceOnUse" id="sublimeMask10"><rect fill="white" height="100%" width="100%" y="0" x="0"></rect><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient30&quot;)" d="M10 10 L17 10 L14.2 12.8 L17 15.6 L15.6 17 L12.8 14.2 L10 17 L10 10 M25 25 L18 25 L20.8 22.2 L18 19.4 L19.4 18 L22.2 20.8 L25 18 L25 25 Z"></path></mask><linearGradient y2="10" x2="17.5" y1="25" x1="17.5" gradientUnits="userSpaceOnUse" id="sublimeGradient31"><stop style="stop-color:rgb(169,169,169);stop-opacity:1" offset="0%"></stop><stop style="stop-color:rgb(255,255,255);stop-opacity:1" offset="100%"></stop></linearGradient></defs></svg></span><span style="top: 0px ! important; height: 30px ! important; left: 1px ! important; width: 30px ! important;" class="sublimevideo-View sublimevideo-Button"><svg height="34" width="34" style="background: none repeat scroll 0% 0% transparent ! important; pointer-events: none ! important; position: absolute ! important; top: -2px ! important; left: -2px ! important; width: 34px ! important; height: 34px ! important;" xmlns="http://www.w3.org/2000/svg" version="1.1"><g><g><defs><filter filterUnits="userSpaceOnUse" id="sublimeFilter8"><feOffset dy="1" dx="0" result="6"></feOffset><feGaussianBlur stdDeviation="0.8" result="7"></feGaussianBlur></filter></defs><path mask="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeMask4&quot;)" filter="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeFilter8&quot;)" stroke-linejoin="round" stroke="rgba(0,0,0,1)" stroke-width="0" fill="rgba(0,0,0,1)" transform="" d="M10 10 L15 10 L15 24 L10 24 L10 10 M19 10 L24 10 L24 24 L19 24 L19 10 Z"></path><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient10&quot;)" transform="" d="M10 10 L15 10 L15 24 L10 24 L10 10 M19 10 L24 10 L24 24 L19 24 L19 10 Z"></path></g></g><defs><linearGradient y2="10" x2="17" y1="24" x1="17" gradientUnits="userSpaceOnUse" id="sublimeGradient9"><stop style="stop-color:rgb(169,169,169);stop-opacity:1" offset="0%"></stop><stop style="stop-color:rgb(255,255,255);stop-opacity:1" offset="100%"></stop></linearGradient><mask maskUnits="userSpaceOnUse" id="sublimeMask4"><rect fill="white" height="100%" width="100%" y="0" x="0"></rect><path fill="url(&quot;http://railscasts.com/episodes/340-datatables#sublimeGradient9&quot;)" d="M10 10 L15 10 L15 24 L10 24 L10 10 M19 10 L24 10 L24 24 L19 24 L19 10 Z"></path></mask><linearGradient y2="10" x2="17" y1="24" x1="17" gradientUnits="userSpaceOnUse" id="sublimeGradient10"><stop style="stop-color:rgb(169,169,169);stop-opacity:1" offset="0%"></stop><stop style="stop-color:rgb(255,255,255);stop-opacity:1" offset="100%"></stop></linearGradient></defs></svg></span></span></span></span></div><script id="video_template" type="text/html"><video width="960" height="600" poster="/static/episodes/posters/loading.png" controls="controls" preload="none" class="sv_force_fullscreen sv_force_flash"><source src="http://media.railscasts.com/assets/episodes/videos/340-datatables.mp4" type="video/mp4"/><source src="http://media.railscasts.com/assets/episodes/videos/340-datatables.m4v" type="video/mp4"/><source src="http://media.railscasts.com/assets/episodes/videos/340-datatables.webm" type="video/webm"/><source src="http://media.railscasts.com/assets/episodes/videos/340-datatables.ogv" type="video/ogg"/></video></script>
+    <div class="info video_info">
+      <div class="screenshot"><a href="http://railscasts.com/episodes/340-datatables?autoplay=true" class="play_video"><img alt="DataTables" src="%23340%20DataTables%20-%20RailsCasts_files/340-datatables.png" height="125" width="200"></a></div>
+      <h1><span class="position">#340</span> DataTables</h1>
+      <div class="details">Apr 11, 2012 | 9 minutes | <a href="http://railscasts.com/?tag_id=4">Views</a>, <a href="http://railscasts.com/?tag_id=11">Ajax</a>, <a href="http://railscasts.com/?tag_id=13">Plugins</a></div>
+      <div class="description">DataTables makes it easy to convert a 
+plain HTML table into one with pagination, sorting, and searching - all 
+done with JavaScript and jQuery. Here I show how to set this up and use a
+ Rails application as the data source.</div>
+      <div class="watch"><a href="http://railscasts.com/episodes/340-datatables?autoplay=true" class="play_video pretty_button">Click to Play Video ▶</a></div>
+      <div class="social"><iframe style="width: 107px; height: 20px;" data-twttr-rendered="true" title="Twitter Tweet Button" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" src="%23340%20DataTables%20-%20RailsCasts_files/tweet_button.html" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
+        <ul class="downloads horizontal">
+          <li>Download:</li>
+          <li><a href="http://media.railscasts.com/assets/episodes/sources/340-datatables.zip">source code</a><span class="overlay">Project Files in Zip (84.3 KB)</span></li><li><a href="http://media.railscasts.com/assets/episodes/videos/340-datatables.mp4">mp4</a><span class="overlay">Full Size H.264 Video (30.1 MB)</span></li><li><a href="http://media.railscasts.com/assets/episodes/videos/340-datatables.m4v">m4v</a><span class="overlay">Smaller H.264 Video (14.9 MB)</span></li><li><a href="http://media.railscasts.com/assets/episodes/videos/340-datatables.webm">webm</a><span class="overlay">Full Size VP8 Video (13.7 MB)</span></li><li><a href="http://media.railscasts.com/assets/episodes/videos/340-datatables.ogv">ogv</a><span class="overlay">Full Size Theora Video (37 MB)</span></li>
+        </ul>
+      <div class="clear"></div>
+</div>    <ul class="nav horizontal"><li class="selected"><a href="http://railscasts.com/episodes/340-datatables" class="selected tab">Show Notes</a></li><li><a href="http://railscasts.com/episodes/340-datatables?view=asciicast" class="tab">ASCIIcast</a></li><li><a href="http://railscasts.com/episodes/340-datatables?view=comments" class="tab">121 Comments</a></li><li><a href="http://railscasts.com/episodes/340-datatables?view=similar" class="tab">Similar Episodes</a></li><li class="next"><a href="http://railscasts.com/episodes/341-asset-pipeline-in-production">Next Episode &gt;</a></li><li class="previous"><a href="http://railscasts.com/episodes/54-debugging-ruby-revised">&lt; Previous Episode</a></li></ul>
+    <div class="nav_section">
+      <div class="inner">
+  <div class="extra_nav">
+      <span class="browse_code">
+        <img alt="Browse_code" class="icon" src="%23340%20DataTables%20-%20RailsCasts_files/browse_code-b10fbdd9228fe0070ff9c2362fe59b34.png" height="21" width="22">
+        <a href="https://github.com/railscasts/340-datatables">Browse Source Code</a>
+      </span>
+  </div>
+
+  <div class="show_notes">
+    <p><strong>Resources</strong></p>
+
+<ul>
+<li><a href="http://datatables.net/">DataTables</a></li>
+<li><a href="http://railscasts.com/episodes/240-search-sort-paginate-with-ajax">Episode 240: Search, Sort, Paginate with AJAX</a></li>
+</ul>
+
+      <div class="code_block">
+        <div class="code_header">
+          Gemfile
+        </div>
+        <div class="CodeRay">
+  <div class="code"><pre>group <span class="sy">:assets</span> <span class="r">do</span>
+  gem <span class="s"><span class="dl">'</span><span class="k">jquery-datatables-rails</span><span class="dl">'</span></span>, <span class="sy">github:</span> <span class="s"><span class="dl">'</span><span class="k">rweng/jquery-datatables-rails</span><span class="dl">'</span></span>
+  gem <span class="s"><span class="dl">'</span><span class="k">jquery-ui-rails</span><span class="dl">'</span></span>
+<span class="r">end</span>
+
+gem <span class="s"><span class="dl">'</span><span class="k">will_paginate</span><span class="dl">'</span></span></pre></div>
+</div>
+
+      </div>
+
+
+      <div class="code_block">
+        <div class="code_header">
+          app/assets/javascripts/application.js
+        </div>
+        <div class="CodeRay">
+  <div class="code"><pre><span class="c">//= require dataTables/jquery.dataTables</span></pre></div>
+</div>
+
+      </div>
+
+
+      <div class="code_block">
+        <div class="code_header">
+          app/assets/stylesheets/application.css
+        </div>
+        <div class="CodeRay">
+  <div class="code"><pre><span class="c">/*</span>
+ <span class="c">*=</span> <span class="c">require</span> <span class="c">jquery.ui.core</span>
+ <span class="c">*=</span> <span class="c">require</span> <span class="c">jquery.ui.theme</span>
+ <span class="c">*=</span> <span class="c">require</span> <span class="c">dataTables/src/demo_table_jui</span>
+<span class="c">*/</span></pre></div>
+</div>
+
+      </div>
+
+
+      <div class="code_block">
+        <div class="code_header">
+          app/assets/javascripts/products.js.coffee
+        </div>
+        <div class="CodeRay">
+  <div class="code"><pre>jQuery -&gt;
+  $('#products').dataTable
+    sPaginationType: "full_numbers"
+    bJQueryUI: true
+    bProcessing: true
+    bServerSide: true
+    sAjaxSource: $('#products').data('source')</pre></div>
+</div>
+
+      </div>
+
+
+      <div class="code_block">
+        <div class="code_header">
+          views/products/index.html.erb
+        </div>
+        <div class="CodeRay">
+  <div class="code"><pre><span class="ta">&lt;table</span> <span class="an">id</span>=<span class="s"><span class="dl">"</span><span class="k">products</span><span class="dl">"</span></span> <span class="an">class</span>=<span class="s"><span class="dl">"</span><span class="k">display</span><span class="dl">"</span></span> <span class="an">data-source</span>=<span class="s"><span class="dl">"</span><span class="il"><span class="idl">&lt;%=</span> products_url(<span class="sy">format:</span> <span class="s"><span class="dl">"</span><span class="k">json</span><span class="dl">"</span></span>) <span class="idl">%&gt;</span></span><span class="dl">"</span></span><span class="ta">&gt;</span>
+  <span class="ta">&lt;thead&gt;</span>
+    <span class="ta">&lt;tr&gt;</span>
+      <span class="ta">&lt;th&gt;</span>Product Name<span class="ta">&lt;/th&gt;</span>
+      <span class="ta">&lt;th&gt;</span>Category<span class="ta">&lt;/th&gt;</span>
+      <span class="ta">&lt;th&gt;</span>Release Date<span class="ta">&lt;/th&gt;</span>
+      <span class="ta">&lt;th&gt;</span>Price<span class="ta">&lt;/th&gt;</span>
+    <span class="ta">&lt;/tr&gt;</span>
+  <span class="ta">&lt;/thead&gt;</span>
+  <span class="ta">&lt;tbody&gt;</span>
+  <span class="ta">&lt;/tbody&gt;</span>
+<span class="ta">&lt;/table&gt;</span></pre></div>
+</div>
+
+      </div>
+
+
+      <div class="code_block">
+        <div class="code_header">
+          products_controller.rb
+        </div>
+        <div class="CodeRay">
+  <div class="code"><pre><span class="r">def</span> <span class="fu">index</span>
+  respond_to <span class="r">do</span> |format|
+    format.html
+    format.json { render <span class="sy">json:</span> <span class="co">ProductsDatatable</span>.new(view_context) }
+  <span class="r">end</span>
+<span class="r">end</span></pre></div>
+</div>
+
+      </div>
+
+
+      <div class="code_block">
+        <div class="code_header">
+          app/datatables/products_datatable.rb
+        </div>
+        <div class="CodeRay">
+  <div class="code"><pre><span class="r">class</span> <span class="cl">ProductsDatatable</span>
+  delegate <span class="sy">:params</span>, <span class="sy">:h</span>, <span class="sy">:link_to</span>, <span class="sy">:number_to_currency</span>, <span class="sy">to:</span> <span class="sy">:@view</span>
+
+  <span class="r">def</span> <span class="fu">initialize</span>(view)
+    <span class="iv">@view</span> = view
+  <span class="r">end</span>
+
+  <span class="r">def</span> <span class="fu">as_json</span>(options = {})
+    {
+      <span class="sy">sEcho:</span> params[<span class="sy">:sEcho</span>].to_i,
+      <span class="sy">iTotalRecords:</span> <span class="co">Product</span>.count,
+      <span class="sy">iTotalDisplayRecords:</span> products.total_entries,
+      <span class="sy">aaData:</span> data
+    }
+  <span class="r">end</span>
+
+private
+
+  <span class="r">def</span> <span class="fu">data</span>
+    products.map <span class="r">do</span> |product|
+      [
+        link_to(product.name, product),
+        h(product.category),
+        h(product.released_on.strftime(<span class="s"><span class="dl">"</span><span class="k">%B %e, %Y</span><span class="dl">"</span></span>)),
+        number_to_currency(product.price)
+      ]
+    <span class="r">end</span>
+  <span class="r">end</span>
+
+  <span class="r">def</span> <span class="fu">products</span>
+    <span class="iv">@products</span> ||= fetch_products
+  <span class="r">end</span>
+
+  <span class="r">def</span> <span class="fu">fetch_products</span>
+    products = <span class="co">Product</span>.order(<span class="s"><span class="dl">"</span><span class="il"><span class="idl">#{</span>sort_column<span class="idl">}</span></span><span class="k"> </span><span class="il"><span class="idl">#{</span>sort_direction<span class="idl">}</span></span><span class="dl">"</span></span>)
+    products = products.page(page).per_page(per_page)
+    <span class="r">if</span> params[<span class="sy">:sSearch</span>].present?
+      products = products.where(<span class="s"><span class="dl">"</span><span class="k">name like :search or category like :search</span><span class="dl">"</span></span>, <span class="sy">search:</span> <span class="s"><span class="dl">"</span><span class="k">%</span><span class="il"><span class="idl">#{</span>params[<span class="sy">:sSearch</span>]<span class="idl">}</span></span><span class="k">%</span><span class="dl">"</span></span>)
+    <span class="r">end</span>
+    products
+  <span class="r">end</span>
+
+  <span class="r">def</span> <span class="fu">page</span>
+    params[<span class="sy">:iDisplayStart</span>].to_i/per_page + <span class="i">1</span>
+  <span class="r">end</span>
+
+  <span class="r">def</span> <span class="fu">per_page</span>
+    params[<span class="sy">:iDisplayLength</span>].to_i &gt; <span class="i">0</span> ? params[<span class="sy">:iDisplayLength</span>].to_i : <span class="i">10</span>
+  <span class="r">end</span>
+
+  <span class="r">def</span> <span class="fu">sort_column</span>
+    columns = <span class="s"><span class="dl">%w[</span><span class="k">name category released_on price</span><span class="dl">]</span></span>
+    columns[params[<span class="sy">:iSortCol_0</span>].to_i]
+  <span class="r">end</span>
+
+  <span class="r">def</span> <span class="fu">sort_direction</span>
+    params[<span class="sy">:sSortDir_0</span>] == <span class="s"><span class="dl">"</span><span class="k">desc</span><span class="dl">"</span></span> ? <span class="s"><span class="dl">"</span><span class="k">desc</span><span class="dl">"</span></span> : <span class="s"><span class="dl">"</span><span class="k">asc</span><span class="dl">"</span></span>
+  <span class="r">end</span>
+<span class="r">end</span></pre></div>
+</div>
+
+      </div>
+
+
+  </div>
+</div>
+      <div class="progress" style="display: none"><img alt="loading" src="%23340%20DataTables%20-%20RailsCasts_files/progress_large-b0fa49d32dce1cea0e4f9c082c1fa5f5.gif"></div>
+    </div>
+</div>
+    </div>
+    <div id="footer">
+      <div class="inner">
+        ©2015 RailsCasts - <a href="http://railscasts.com/privacy">Privacy Policy</a> - Hosted by <a href="https://www.digitalocean.com/?utm_source=railscasts.com">Digital Ocean</a>
+      </div>
+    </div>
+
+      <!-- Google Analytics -->
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-7696481-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+  
+
+</body></html>

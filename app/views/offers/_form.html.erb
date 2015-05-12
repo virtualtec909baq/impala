@@ -1,0 +1,108 @@
+<div>
+  <%= form_for(@offer, remote: true) do |f| %>
+  <div class="form-group">
+    <label>Tipo de Oferta</label>
+    <%= f.select :kind, [["Tipo Oferta 1", "oferta1"],["Tipo Oferta 2", "oferta2"]], {prompt: "Seleccione Tipo Oferta"}, {class: "form-control"}%>
+  </div>
+  <div class="form-group">
+    <label>Carga Compensatoria</label>
+    <%= f.check_box :load_compensation%>
+  </div>
+  <div class="row">
+    <div class="col-xs-4 col-sm-4 col-md-4">
+      <div class="form-group">
+        <label>Tipo de Producto</label>
+        <%=  f.collection_select :product, Product.all, :name, :name, {prompt: " "}, {class: "form-control"}%>
+      </div>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4">
+      <div class="form-group">
+        <label>Origen</label>
+        <%=  f.collection_select :origins, Location.all, :location, :location, {prompt: " "}, {class: "form-control"}%>
+      </div>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4">
+      <div class="form-group">
+        <label>Destino</label>
+        <%=  f.collection_select :destination, Location.all, :location, :location, {prompt: " "}, {class: "form-control"}%>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">
+        <label>Und. Cotizacion</label>
+        <%=  f.collection_select :unit, Measure.all, :unit, :unit, {prompt: " "}, {class: "form-control"}%>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">
+        <label>Volumen Demandado</label>
+        <%= f.text_field :volumen, class:"form-control"%>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :price, :id => "price"%>
+    <%= f.text_field :price, class:"form-control"%>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">
+        <label>Servicio </label>
+        <%= f.text_field :service_start_date,class:"form-control date"%>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">
+        <label>Fin Servicio </label>
+        <%= f.text_field :service_finish_date, class:"form-control date"%>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">
+        <label>Inicio Oferta </label>
+        <%= f.text_field :offer_start_date, class:"form-control date"%>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">
+        <label>Fin Oferta </label>
+        <%= f.text_field :offer_finish_date, class:"form-control date"%>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-4 col-sm-4 col-md-4">
+      <div class="form-group">
+        <label>Contenedor</label>
+        <%= f.check_box :container%>
+      </div>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4">
+      <div class="form-group">
+        <label>Carga General</label>
+        <%= f.check_box :general_load%>
+      </div>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4">
+      <div class="form-group">
+        <label>Carga Liquida</label>
+        <%= f.check_box :liquid_load%>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Observaciones</label>
+    <br>
+    <%= f.text_area :observations, :rows => "4" , :cols => "2" , :class => "textare_w100"%>
+  </div>
+  <%= f.submit :class =>"btn btn-info btn-block"%>
+  <%end%>
+</div>

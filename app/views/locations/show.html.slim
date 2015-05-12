@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Ref:
+  = @location.ref
+p
+  strong Name:
+  = @location.name
+p
+  strong Location:
+  = @location.location
+
+= link_to 'Edit', edit_location_path(@location)
+'|
+= link_to 'Back', locations_path

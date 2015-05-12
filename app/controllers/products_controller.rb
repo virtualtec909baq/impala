@@ -1,0 +1,98 @@
+class ProductsController < ApplicationController
+  helper_method :sort_column, :sort_direction
+  before_filter :authenticate_user!
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  
+  def index
+    @products = Product.all
+    @product = Product.new
+    @filterrific = Filterrific.new(
+      Product,
+      params[:filterrific] || session[:filterrific_products]
+    )
+    session[:filterrific_products] = @filterrific.to_hash
+    @products = @filterrific.find
+    @products = @products.order(sort_column + " " + sort_direction).page(params[:page])
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+  
+  # GET /products/1
+  # GET /products/1.json
+  def show
+  end
+
+  # GET /products/new
+  def new
+    @product = Product.new
+  end
+
+  # GET /products/1/edit
+  def edit
+  end
+
+  # POST /products
+  # POST /products.json
+  def create
+    @product = Product.new(product_params)
+
+    respond_to do |format|
+      if @product.save
+        flash[:notice] = 'El producto ha sido creado'
+        format.html { redirect_to @product }
+        format.js   {}
+        format.json { render :show, status: :created, location: @product }
+      else
+        format.html { render :new }
+        format.js   {}
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /Offers/1
+  # PATCH/PUT /Offers/1.json
+  def update
+    respond_to do |format|
+      if @product.update(product_params)
+        flash[:notice] = 'La producto ha sido actualizado'
+        format.html { redirect_to @product }
+        format.json { render :show, status: :ok, location: @product }
+        format.js   { js_redirect_to(products_path)}
+      else
+        format.html { render :edit }
+        format.js   {}
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    flash[:notice] = 'El producto ha sido eliminado'
+    redirect_to products_url
+  end
+  
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def product_params
+    params.require(:product).permit(:ref, :name, :details)
+  end
+  
+  def sort_column
+    Product.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+end

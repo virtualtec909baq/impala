@@ -1,0 +1,37 @@
+<div id="filter-panel" class="collapse filter-panel">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <%= form_for @filterrific do |f| %>
+                <div class="col-md-3">
+                    <label><%= t('.product')%></label>
+                    <%= f.text_field(:search_query_product, class: 'filterrific-periodically-observed') %>
+                </div>
+                <div class="col-md-3">
+                    <label><%= t('.origins')%></label>
+                    <%= f.text_field(:search_query_origins, class: 'filterrific-periodically-observed') %>
+                </div>
+                <div class="col-md-3">
+                    <label><%= t('.destination')%></label>
+                    <%= f.text_field(:search_query_destination,class: 'filterrific-periodically-observed') %>
+                </div>
+                <div class="col-md-3">
+                    <label><%= t('.service_start_date')%></label>
+                    <%= f.text_field(:with_service_start_date_gte, class: ' date filterrific-periodically-observed') %>
+                </div>
+                <div class="col-md-3">
+                    <label><%= t('.service_finish_date')%></label>
+                    <%= f.text_field(:with_service_finish_date_lt, class: ' date filterrific-periodically-observed') %>
+                </div>
+                <div class="col-md-3">
+                    <br>
+                    <%= link_to('Restablecer Filtros',reset_filterrific_offers_path, :class => "btn btn-danger btn_white") %>
+                </div>
+                
+            <% end %>
+        </div>
+    </div>
+</div>    
+
+<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#filter-panel"  style="margin-bottom: 10px;">
+  <span class="glyphicon glyphicon-filter"></span> <%= t('.filters')%> 
+</button>

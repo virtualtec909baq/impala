@@ -1,0 +1,21 @@
+#filterrific_results
+  table#locations.table.table-striped.table-bordered
+    thead
+      tr
+        th 
+          | #
+        th 
+          = t(".ref")
+        th 
+          = t(".location")
+        th
+
+    tbody
+      - @locations.each do |location|
+        tr
+          td = location.id
+          td = location.ref
+          td = location.location
+          td =  link_to location, data: {:confirm => 'Esta seguro que desea elimanar esta ubicacion'}, :method => :delete do
+              span.glyphicon.glyphicon-trash
+  = will_paginate @products, :locals => { :products => @products }, renderer: BootstrapPagination::Rails

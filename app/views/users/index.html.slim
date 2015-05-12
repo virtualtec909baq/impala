@@ -1,0 +1,7 @@
+.page-header
+  ol.breadcrumb
+    li.active
+      i.fa.fa-user
+      | LISTADO DE  PROVEEDORES
+= render(partial: 'users/filters') 
+= render(partial: 'users/list',locals: { products: @users })

@@ -1,0 +1,179 @@
+   /* first for IE 4–8 */
+
+   @font-face {
+    font-family: "DINWeb-Light";
+    src:  url('/assets/Roboto-Thin.eot');
+  }
+
+  body {
+    font-family: DINWeb-Light, "Helvetica","Arial",sans-serif !important;
+    padding-top: 120px;
+    padding-bottom: 40px;
+    background-color: #3F555C;
+    color: #3F555C !important;
+    background-size: cover;
+    background-attachment: fixed;
+    /*background-image: url('/assets/bodybg.jpg');*/
+    
+  }
+  .btn 
+  {
+   outline:0;
+   border:none;
+   border-top:none;
+   border-bottom:none;
+   border-left:none;
+   border-right:none;
+   box-shadow:inset 2px -3px rgba(0,0,0,0.15);
+ }
+ .btn:focus
+ {
+   outline:0;
+   -webkit-outline:0;
+   -moz-outline:0;
+ }
+ .fullscreen_bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url('/assets/impala.jpg');
+  background-repeat:repeat;
+}
+.form-signin {
+  max-width: 280px;
+  padding: 15px;
+  margin: 0 auto;
+  margin-top:50px;
+}
+.form-signin .form-signin-heading, .form-signin {
+  margin-bottom: 10px;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: solid;
+  border-color: #000;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-style: none;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-color: rgb(0,0,0);
+  border-top:1px solid rgba(0,0,0,0.08);
+}
+.form-signin-heading {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 2px rgba(0,0,0,0.5);
+}
+
+.help-block {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442 !important;
+  display: block;
+  font-size: 17px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+img {
+  width: 49%;
+}
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+}
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr { 
+    display: block; 
+  }
+  
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  tr { border: 1px solid #ccc; }
+  
+  td { 
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee; 
+    position: relative;
+    padding-left: 50%; 
+  }
+  
+  td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+  }
+  
+  /*
+  Label the data
+  */
+  td:nth-of-type(1):before { content: "First Name"; }
+  td:nth-of-type(2):before { content: "Last Name"; }
+  td:nth-of-type(3):before { content: "Job Title"; }
+  td:nth-of-type(4):before { content: "Favorite Color"; }
+  td:nth-of-type(5):before { content: "Wars of Trek?"; }
+  td:nth-of-type(6):before { content: "Porn Name"; }
+  td:nth-of-type(7):before { content: "Date of Birth"; }
+  td:nth-of-type(8):before { content: "Dream Vacation City"; }
+  td:nth-of-type(9):before { content: "GPA"; }
+  td:nth-of-type(10):before { content: "Arbitrary Data"; }
+}

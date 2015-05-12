@@ -1,0 +1,36 @@
+<div class="col-md-12">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3>¿ Desea inscribirse en esta oferta ? </h3>
+		</div>
+		<div class="panel-body">
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="well">
+            <%= form_for :offer_user, url: url_for( :controller => :offers, :action => :create_offer_user ), html: { method: :post } do |f| %>
+              
+              <%= f.label :Cantidad%>
+              <%= f.number_field :quantity, :class =>"form-control", :max => "#{@offer.volumen}"%>
+              <%= f.label :Precio%>
+              <%= f.text_field :price, :class =>"form-control"%>
+              <%= f.hidden_field :offer_id, :value => "#{params[:id]}" %>
+              <%= f.hidden_field :user_id, :value => "#{current_user.id}" %>
+              <br>
+              <%= f.submit :class =>"btn btn-info btn-block",disabled: @offer_user_find_by_id%>
+            <%end%>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <p class="lead">Recuerda para inscribirte :</p>
+          <ul class="list-unstyled" style="line-height: 2">
+            <li><span class="fa fa-check text-success"></span> See all your orders</li>
+            <li><span class="fa fa-check text-success"></span> Fast re-order</li>
+            <li><span class="fa fa-check text-success"></span> Save your favorites</li>
+            <li><span class="fa fa-check text-success"></span> Fast checkout</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

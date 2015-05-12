@@ -1,0 +1,27 @@
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span></button>
+        <h4 id="myModalLabel" class="modal-title">Extender el tiempo</h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="errors">
+        </div>
+        <form method="post" data-remote="true" accept-charset="UTF-8" action="/products" id="new_product" class="new_product"><input type="hidden" value="✓" name="utf8">
+          <label for="product_Referencia">Fecha de Servicio de oferta</label>
+          <input type="text" id="product_ref" name="product[ref]" class=" date form-control">
+          <label for="product_Nombre">Fecha de oferta</label>
+          <input type="text" id="product_name" name="product[name]" class=" date form-control">
+          <br>
+          <input type="submit" class="btn btn-info btn-block" value="Aegregar" name="commit">
+        </form>      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
