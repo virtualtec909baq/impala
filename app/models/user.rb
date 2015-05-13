@@ -17,26 +17,6 @@ class User < ActiveRecord::Base
     # relationship
     has_many :offers, :through => :offer_users
     has_many :offer_users, :dependent => :destroy 
-
-    filterrific(
-        default_filter_params: { sorted_by: 'created_at_desc' },
-        filter_names: [
-            :search_query_name,
-            :search_query_user_name
-        ]
-    )
-
-    scope :search_query_name, lambda { |query|
-        return nil  if query.blank? 
-        query = query.to_s
-        where("users.name LIKE ?", "%#{query}%")
-    }
-
-    scope :search_query_user_name, lambda { |query|
-        return nil  if query.blank? 
-        query = query.to_s
-        where("users.username LIKE ?", "%#{query}%")
-    }
     
     def self.find_first_by_auth_conditions(warden_conditions)
     	conditions = warden_conditions.dup
