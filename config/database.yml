@@ -79,7 +79,12 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: mysql2
   database: impala
-  username: impala
-  password: <%= ENV['IMPALA_DATABASE_PASSWORD'] %>
+  username: root
+  host: impalamysql.ckjck9zmjnmo.us-west-2.rds.amazonaws.com
+  password: Impalasolutec123
+  port: 3306
+  pool: 5
+  timeout: 5000
+  
