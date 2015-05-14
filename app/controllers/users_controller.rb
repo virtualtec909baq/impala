@@ -3,15 +3,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users = User.where(:kind => "proveedor")
+    @users = User.where(:kind => "proveedor").page(params[:page])
     @user = User.new
-    @filterrific = Filterrific.new(
-      User,
-      params[:filterrific] || session[:filterrific_users]
-    )
-    session[:filterrific_users] = @filterrific.to_hash
-    @users = @filterrific.find
-    @users = @users.page(params[:page])
     respond_to do |format|
       format.html
       format.js

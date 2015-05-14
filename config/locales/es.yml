@@ -15,12 +15,47 @@ es:
         offer: "Ofertas"
         location: "Ubicaciones"
         log_out: "Salir"
+  products:
+    index: 
+    list:
+      name: "Nombre"
+      ref: "Referencia"
+      delete: "¿Esta seguro que desea elimanar este producto?"
+    filters:
+      name: "Nombre"
+      ref: "Referencia"
+      add: "Agregar Producto"
+      clear: "Limpiar Filtros"
+      filters: "Filtros"
+  measures:
+    index: 
+      ref: "Referencia"
+      name: "Nombre"
+      location: "Ubicación"
+      delete: "¿Desea eliminar esta ubicación?"
+      head: "LISTADO DE UBICACIONES"
+    filters:
+      unit: "Und. Medida"
+      add: "Agregar Und. Medida"
+      clear: "Limpiar Filtros"
+      filters: "Filtros"
+    edit:
+      head: "EDITAR UND. MEDIDA"
   locations:
     index: 
       ref: "Referencia"
       name: "Nombre"
       location: "Ubicación"
       delete: "¿Desea eliminar esta ubicación?"
+      head: "LISTADO DE UBICACIONES"
+    filters:
+      name: "Nombre"
+      loc: "Ubicación"
+      add: "Agregar Ubicación"
+      clear: "Limpiar Filtros"
+      filters: "Filtros"
+    edit:
+      head: "EDITAR UBICACIÓN"
   offers:
     index:
       head: "PANEL ADMINISTRATIVO"
@@ -45,7 +80,6 @@ es:
       service_finish_date: "Fecha Fin Servicio"
       offer_start_date: "Fecha Inicio Oferta"
       offer_finish_date: "Fin Inicio Oferta"
-
     modal:
       observations: "Observaciones"
     modal_offer:
