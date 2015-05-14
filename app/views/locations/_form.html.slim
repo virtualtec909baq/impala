@@ -1,19 +1,8 @@
-<hr>
-= form_for @location , html: { class: 'form-horizontal ', role: "form"} do |f|
-  - if @location.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@location.errors.count, "error")} prohibited this location from being saved:"
-      ul
-        - @location.errors.full_messages.each do |message|
-          li = message
-
-  .form-group
+= form_for @location,  remote: true do |f|
     = f.label :Referencia
     = f.text_field :ref, :class =>"form-control"
-  .form-group
-    = f.label :Nombre
-    = f.text_field :name, :class =>"form-control"
-  .form-group
     = f.label :Ubicacion
     = f.text_field :location, :class =>"form-control"
-  .actions = f.submit
+    br
+    =f.submit :class =>"btn btn-info btn-block"
+       

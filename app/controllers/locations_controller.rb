@@ -5,21 +5,14 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
-    @location = Location.new
-    @filterrific = Filterrific.new(
-      Location,
-      params[:filterrific] || session[:filterrific_locations]
-    )
-    session[:filterrific_locations] = @filterrific.to_hash
-    @locations = @filterrific.find
-    @locations = @locations.page(params[:page])
+    @search = Location.ransack(params[:q])
+    @locations = @search.result.page(params[:page])
+    @location = Location.new()
     respond_to do |format|
       format.html
       format.js
     end
   end
-
   # GET /locations/1
   # GET /locations/1.json
   def show
@@ -61,8 +54,10 @@ class LocationsController < ApplicationController
         flash[:notice] = 'La Ubicación ha sido actualizado'
         format.html { redirect_to @location }
         format.json { render :show, status: :ok, location: @location }
+        format.js   { js_redirect_to(locations_path)}
       else
         format.html { render :edit }
+        format.js   {}
         format.json { render json: @location.errors, status: :unprocessable_entity }
       end
     end

@@ -9,6 +9,7 @@
         th 
           = t(".location")
         th
+        th
 
     tbody
       - @locations.each do |location|
@@ -16,6 +17,9 @@
           td = location.id
           td = location.ref
           td = location.location
+          td
+            = link_to edit_location_path(location)
+                span.glyphicon.glyphicon-pencil
           td =  link_to location, data: {:confirm => 'Esta seguro que desea elimanar esta ubicacion'}, :method => :delete do
               span.glyphicon.glyphicon-trash
   = will_paginate @products, :locals => { :products => @products }, renderer: BootstrapPagination::Rails

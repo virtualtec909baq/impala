@@ -2,8 +2,8 @@
   ol.breadcrumb
     li.active
       i.fa.fa-bookmark
-      | LISTADO DE UBICACIONES
-
+      = t('.head')
+= render(partial: 'locations/filters')
 = render(partial: 'locations/list',locals: { products: @products })
 
 

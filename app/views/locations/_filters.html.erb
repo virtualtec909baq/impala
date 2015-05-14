@@ -1,0 +1,32 @@
+<div id="filter-panel" class="collapse filter-panel">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <%= search_form_for @search do |f| %>
+                <div class="col-md-3">
+                    <label><%= t('.ref')%></label>
+                    <%= f.search_field(:ref_cont, class: 'filterrific-periodically-observed') %>
+                </div>
+                <div class="col-md-3">
+                    <label><%= t('.loc')%></label>
+                    <%= f.search_field(:location_cont, class: 'filterrific-periodically-observed') %>
+                </div>
+                <div class="col-md-3">
+                    <br>
+                    <%=f.submit :class =>"btn btn-info btn-block" %>
+                </div>
+                <div class="col-md-3">
+                    <br>
+                    <%= link_to t('.clear'), request.path, class:"btn btn-danger btn_white btn-block" %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>    
+
+<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#filter-panel"  style="margin-bottom: 10px;">
+  <span class="glyphicon glyphicon-filter"></span> <%= t('.filters')%> 
+</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalLocation"  style="margin-bottom: 10px;">
+    <span class="fa fa-plus"></span> <%= t('.add')%>
+</button>
+<%= render(partial: 'locations/modal')%>
