@@ -20,7 +20,9 @@ gem 'will_paginate-bootstrap'
 gem "bower-rails", "~> 0.9.2"
 gem 'jquery-datatables-rails', '~> 3.2.0'
 gem 'jquery-countdown-rails'
-gem 'filterrific'
+gem 'formtastic', github: 'justinfrench/formtastic'
+gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
 gem "font-awesome-rails"
 gem 'cancancan', '~> 1.10'
 gem 'bootstrap-datepicker-rails'
