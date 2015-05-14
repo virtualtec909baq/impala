@@ -14,32 +14,18 @@
 		</li>
 	</ol>
 </div>
-<%if !params[:index_2]%>
-	<%if current_user.kind == "admin"%>
-		<%= render(partial: 'offers/shortcuts') %>
-		<%= render(partial: 'offers/filters') %>
-		<hr>
-	<%end%>
-<%else%>
-<div class="row">
-	<div class="col-md-6"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalOferta"  style="margin-bottom: 10px;">
-		<span class="fa fa-plus"></span> Agregar Offerta
-	</button></div>
-	<div class="col-md-6">
-		<div class="dropdown pull-right">
-			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-				Seleccione tipo de oferta 
-				<span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Oferta tipo 1</a></li>
-				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Oferta tipo 2</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
-<br>
+<%if current_user.kind == "admin"%>
+	<%= render(partial: 'offers/shortcuts') %>
+	<%= render(partial: 'offers/filters') %>
+	<hr>
 <%end%>
+
+<p>
+  Descargar:
+  <%= link_to "CSV", offers_path(format: "csv") %> |
+  <%= link_to "Excel", offers_path(format: "xls") %>
+</p>
+
 <%= render(partial: 'offers/list',locals: { offers: @offers }) %>
 
 <%= render(partial: 'modal_offer')%>

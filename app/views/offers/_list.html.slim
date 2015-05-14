@@ -3,34 +3,31 @@
     thead
     tr
       th 
+        =  sort_link @search, :product, t('.product')
       th 
-        = t('.product')
+        = sort_link @search, :origins, t('.origins')
       th 
-        = t('.origins')
+        = sort_link @search, :destination, t('.destination')
       th 
-        = t('.destination')
+        = sort_link @search, :volumen,t('.volumen')
       th 
-        = t('.volumen')
+        = sort_link @search, :price,t('.price')
       th 
-        = t('.price')
+        = sort_link @search, :service_start_date, t('.service_start_date')
       th 
-        = t('.service_start_date')
+        = sort_link @search, :service_finish_date, t('.service_finish_date')
       th 
-        = t('.service_finish_date')
+        = sort_link @search, :offer_start_date, t('.offer_start_date')
       th 
-        = t('.offer_start_date')
-      th 
-        = t('.offer_finish_date')
+        = sort_link @search, :offer_finish_date, t('.offer_finish_date')
       - if current_user.kind == "admin"
         th
         th
         th
-    - @offers.each do |offer|
-      tr 
+    
+    - @offers.each do |offer| 
+      tr class=('danger' if offer.status == 2)
         td
-          span.badge.progress-bar-danger
-            = offer_status(offer)
-        td.w120
           span.badge.progress-bar-success
             = user_count(offer)
           = link_to(offer.product, offer_path(offer.id), :data => {:date => offer.offer_finish_date}, :class => "offer_id",:id => 'my-link')

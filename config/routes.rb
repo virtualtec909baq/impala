@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   resources :locations
   resources :products
   resources :offers do 
-  	get :reset_filterrific, on: :collection
+    get :reset_filterrific, on: :collection
+    collection do
+      match 'search' => 'offers#search', via: [:get, :post], as: :search
+    end
   end
+  
   post "offers/create_offer_user", to: "offers#create_offer_user", as: "create_offer_user"
   post "offers/change_status" => "offers#change_status"
 end

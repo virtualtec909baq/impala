@@ -10,46 +10,31 @@ class Offer < ActiveRecord::Base
 	
 	# default for will_paginate
   	self.per_page = 10
-	
-	# filterrific to apply => http://filterrific.clearcove.ca/pages/action_controller_api.html
-	
-	filterrific(
-		default_filter_params: { sorted_by: 'created_at_desc' },
-		filter_names: [
-			:search_query_product,
-			:search_query_destination,
-			:search_query_origins,
-			:with_service_start_date_gte,
-			:with_service_finish_date_lt
-		]
-	)
-	
-	scope :search_query_product, lambda { |query|
-		return nil  if query.blank? 
-		query = query.to_s
-		where("offers.product LIKE ?", "%#{query}%")
-	}
 
-	scope :search_query_destination, lambda { |query|
-		return nil  if query.blank? 
-		query = query.to_s
-		where("offers.destination LIKE ?", "%#{query}%")
-	}
-	
-	scope :search_query_origins, lambda { |query|
-		return nil  if query.blank? 
-		query = query.to_s
-		where("offers.origins LIKE ?", "%#{query}%")
-	}
+	# search dates
 
-	scope :with_service_start_date_gte, lambda { |reference_time|
-		return nil  if reference_time.blank? 
-		where('offers.service_start_date >= ?', reference_time)
-	}
-	
-	scope :with_service_finish_date_lt, lambda { |reference_time|
-		return nil  if reference_time.blank? 
-		where('offers.service_finish_date < ?', reference_time)
-	}
-	
+	ransacker :service_start_date do
+  	Arel::Nodes::SqlLiteral.new("date(offers.service_start_date)")
+	end
+
+	ransacker :service_finish_date do
+  	Arel::Nodes::SqlLiteral.new("date(offers.service_finish_date)")
+	end
+
+	ransacker :offer_finish_date do
+  	Arel::Nodes::SqlLiteral.new("date(offers.offer_finish_date)")
+	end
+
+	ransacker :offer_start_date do
+  	Arel::Nodes::SqlLiteral.new("date(offers.offer_start_date)")
+	end
+
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |offer|
+        csv << offer.attributes.values_at(*column_names)
+      end
+    end
+  end
 end

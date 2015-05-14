@@ -7,25 +7,14 @@ class OffersController < ApplicationController
   def index
     @offer = Offer.new()
     @product = Product.new()
-    @offers = Offer.all
-    @filterrific = Filterrific.new(
-      Offer,
-      params[:filterrific] || session[:filterrific_offers]
-      )
-
-    session[:filterrific_offers] = @filterrific.to_hash
-    
-    @offers = @filterrific.find.page(params[:page])
-    # user_session.filter_position(params[:filter_position])
+    @search = Offer.ransack(params[:q])
+    @offers = @search.result.page(params[:page])
     respond_to do |format|
       format.html
       format.js
+      format.csv { send_data @offers.to_csv }
+      format.xls { send_data @offers.to_csv(col_sep: "\t") }
     end
-  end
-
-  def reset_filterrific
-    session[:filterrific_offers] = nil
-    redirect_to action: :index
   end
   
   # GET /Offers/1
