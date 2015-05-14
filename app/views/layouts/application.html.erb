@@ -25,8 +25,8 @@
 						<%puts params.inspect%>
 						<li class="<%if params[:controller] == 'offers' and !params[:index_2] %> active <%end %>"><a href="<%= root_path%>"><%= t('.home')%></a></li>
 						<%if current_user.kind == "admin"%>
-							<li class="<%if params[:index_2] %> active <%end %>"><a href="<%= offers_path(index_2: true)%>"><%= t('.offer')%></a></li>
-							<li class="<%if params[:controller] == 'users' %> active <%end %>"><a href="<%= users_path%>"><%= t('.provider')%></a></li>
+							<li class="<%if params[:controller] == 'users' %> active <%end %>"><a href="<%= users_path(:rol => "supervicer")%>"><%= t('.supervicer')%></a></li>
+							<li class="<%if params[:controller] == 'users' %> active <%end %>"><a href="<%= users_path(:rol => "provider")%>"><%= t('.provider')%></a></li>
 							<li class="<%if params[:controller] == 'products' %> active <%end %>"><a href="<%= products_path%>"><%= t('.product')%></a></li>
 							<li class="<%if params[:controller] == 'locations' %> active <%end %>"><a href="<%= locations_path%>"><%= t('.location')%></a></li>
 							<li class="<%if params[:controller] == 'measures' %> active <%end %>"><a href="<%= measures_path%>"><%= t('.measures')%></a></li>
