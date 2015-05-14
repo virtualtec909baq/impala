@@ -27,12 +27,6 @@ module ApplicationHelper
 		end
 	end
 
-	def offer_status(offer)
-		if offer.status == 2
-			return "Oferta Inactiva"
-		end
-	end
-	
 	def user_count(offer)
 		if offer.users.count > 0
 			return  offer.users.count
