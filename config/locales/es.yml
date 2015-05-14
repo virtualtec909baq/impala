@@ -7,6 +7,7 @@ es:
       application:
         brand: "IMPALA"
         home: "Inicio"
+        supervicer: "Supervisores"
         provider: "Proveedores"
         profile: "Mi Perfil"
         product: "Productos"
@@ -33,16 +34,18 @@ es:
       price: "Precio"
       service_start_date: "Inicio Servicio"
       service_finish_date: "Fin Servicio"
-      offer_start_date: "Inicio Oferta"
-      offer_finish_date: "Fin Oferta"
       delete: "¿Esta seguro que desea elimanar esta oferta?"
     filters: 
       filters: "Filtros"
       product: "Producto"
       origins: "Origen"
       destination: "Destino"
+      type: "Tipo Oferta"
       service_start_date: "Fecha Inicio Servicio"
       service_finish_date: "Fecha Fin Servicio"
+      offer_start_date: "Fecha Inicio Oferta"
+      offer_finish_date: "Fin Inicio Oferta"
+
     modal:
       observations: "Observaciones"
     modal_offer:
