@@ -4,15 +4,9 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   
   def index
-    @products = Product.all
+    @search = Product.ransack(params[:q])
+    @products = @search.result.page(params[:page])
     @product = Product.new
-    @filterrific = Filterrific.new(
-      Product,
-      params[:filterrific] || session[:filterrific_products]
-    )
-    session[:filterrific_products] = @filterrific.to_hash
-    @products = @filterrific.find
-    @products = @products.order(sort_column + " " + sort_direction).page(params[:page])
     respond_to do |format|
       format.html
       format.js

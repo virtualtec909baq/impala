@@ -3,8 +3,8 @@
     thead
     tr
       th #
-      th = sortable "name"
-      th Referencia
+      th =  sort_link @search, :name, t('.name')
+      th =  sort_link @search, :ref, t('.ref')
       th
       th
       - for product in @products
@@ -15,7 +15,7 @@
           td
             = link_to edit_product_path(product)
               span.glyphicon.glyphicon-pencil
-          td =  link_to product, data: {:confirm => 'Esta seguro que desea elimanar este producto'}, :method => :delete do
+          td =  link_to product, data: {:confirm => t('.delete')}, :method => :delete do
               span.glyphicon.glyphicon-trash
   = will_paginate @products, :locals => { :products => @products }, renderer: BootstrapPagination::Rails
 
