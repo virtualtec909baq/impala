@@ -18,13 +18,12 @@
 	<%= render(partial: 'offers/shortcuts') %>
 	<%= render(partial: 'offers/filters') %>
 	<hr>
+	<p>
+		Descargar:
+		<%= link_to "CSV", offers_path(format: "csv") %> |
+		<%= link_to "Excel", offers_path(format: "xls") %>
+	</p>
 <%end%>
-
-<p>
-  Descargar:
-  <%= link_to "CSV", offers_path(format: "csv") %> |
-  <%= link_to "Excel", offers_path(format: "xls") %>
-</p>
 
 <%= render(partial: 'offers/list',locals: { offers: @offers }) %>
 

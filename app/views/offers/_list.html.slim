@@ -28,8 +28,9 @@
     - @offers.each do |offer| 
       tr class=('danger' if offer.status == 2)
         td
-          span.badge.progress-bar-success
-            = user_count(offer)
+          - if current_user.kind == "admin"
+            span.badge.progress-bar-success
+              = user_count(offer)
           = link_to(offer.product, offer_path(offer.id), :data => {:date => offer.offer_finish_date}, :class => "offer_id",:id => 'my-link')
         td
           = offer.origins

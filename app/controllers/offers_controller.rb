@@ -6,15 +6,27 @@ class OffersController < ApplicationController
   # GET /Offers.json
   def index
     @offer = Offer.new()
-    @product = Product.new()
-    @location = Location.new()
-    @search = Offer.ransack(params[:q])
-    @offers = @search.result.page(params[:page])
-    respond_to do |format|
-      format.html
-      format.js
-      format.csv { send_data @offers.to_csv }
-      format.xls { send_data @offers.to_csv(col_sep: "\t") }
+      @product = Product.new()
+      @location = Location.new()
+    if current_user.kind == "admin"
+      @search = Offer.ransack(params[:q])
+      @offers = @search.result.page(params[:page])
+      respond_to do |format|
+        format.html
+        format.js
+        format.csv { send_data @offers.to_csv }
+        format.xls { send_data @offers.to_csv(col_sep: "\t") }
+      end
+    else
+      @search = Offer.ransack(params[:q])
+      @offers = Offer.where(:status => 1).page(params[:page])
+      respond_to do |format|
+        format.html
+        format.js
+        format.csv { send_data @offers.to_csv }
+        format.xls { send_data @offers.to_csv(col_sep: "\t") }
+      end
+
     end
   end
   

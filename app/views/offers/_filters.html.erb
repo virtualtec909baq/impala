@@ -4,7 +4,7 @@
             <%= search_form_for @search do |f| %>
                 <div class="col-md-3">
                     <label><%= t('.type')%></label>
-                    <%=  f.collection_select :kind_cont, Location.all, :location, :location, {prompt: " "}, {class: "form-control"}%>
+                    <%= f.select :kind_cont, [["Tipo Oferta 1", "oferta1"],["Tipo Oferta 2", "oferta2"]], {prompt: "Seleccione Tipo Oferta"}, {class: "form-control"}%>
                 </div>
                 <div class="col-md-3">
                     <label><%= t('.product')%></label>
