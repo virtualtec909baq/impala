@@ -4,16 +4,11 @@ class MeasuresController < ApplicationController
 
   # GET /measures
   # GET /measures.json
+
   def index
-    @measures = Measure.all
-    @measure = Measure.new
-    @filterrific = Filterrific.new(
-      Measure,
-      params[:filterrific] || session[:filterrific_measures]
-    )
-    session[:filterrific_measures] = @filterrific.to_hash
-    @measures = @filterrific.find
-    @measures = @measures.page(params[:page])
+    @search = Measure.ransack(params[:q])
+    @measures = @search.result.page(params[:page])
+    @measure = Measure.new()
     respond_to do |format|
       format.html
       format.js
@@ -61,13 +56,14 @@ class MeasuresController < ApplicationController
         flash[:notice] = 'Se ha creado Unidad de medidad'
         format.html { redirect_to @measure }
         format.json { render :show, status: :ok, location: @measure }
+        format.js   { js_redirect_to(measures_path)}
       else
         format.html { render :edit }
+        format.js   {}
         format.json { render json: @measure.errors, status: :unprocessable_entity }
       end
     end
   end
-
   # DELETE /measures/1
   # DELETE /measures/1.json
   def destroy

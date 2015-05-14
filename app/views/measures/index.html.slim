@@ -4,5 +4,6 @@
       i.fa.fa-calculator style="margin-right: 5px;"
       | LISTADO DE UNIDADES DE MEDIDA
 
-= render(partial: 'measures/list',locals: { products: @products })
+= render(partial: 'measures/filters')
+= render(partial: 'measures/list',locals: { measures: @measures })
 
