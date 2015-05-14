@@ -6,23 +6,4 @@ class Location < ActiveRecord::Base
 
 	self.per_page = 10
 
-	filterrific(
-		default_filter_params: { sorted_by: 'created_at_desc' },
-		filter_names: [
-			:search_query_ref,
-			:search_query_location
-		]
-	)
-
-	scope :search_query_ref, lambda { |query|
-		return nil  if query.blank? 
-		query = query.to_s
-		where("locations.ref LIKE ?", "%#{query}%")
-	}
-
-	scope :search_query_location, lambda { |query|
-		return nil  if query.blank? 
-		query = query.to_s
-		where("locations.location LIKE ?", "%#{query}%")
-	}
 end
