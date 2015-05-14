@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require filterrific/filterrific-jquery
 //= require modernizr/modernizr
 //= require turbolinks
 //= require bootstrap/dist/js/bootstrap.min
