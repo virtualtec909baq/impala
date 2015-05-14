@@ -7,6 +7,7 @@ class OffersController < ApplicationController
   def index
     @offer = Offer.new()
     @product = Product.new()
+    @location = Location.new()
     @search = Offer.ransack(params[:q])
     @offers = @search.result.page(params[:page])
     respond_to do |format|
