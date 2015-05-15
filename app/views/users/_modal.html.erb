@@ -9,7 +9,7 @@
       <div class="modal-body">
         <div class="panel-body">
           <div class="errors"></div>
-              <%=form_for User.new , remote: true, html: { role: "form",'data-model' => 'offer'} do |f|%>
+              <%= form_for User.new, url: users_path , remote: true do |f| %>
                 <div class="row">
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
